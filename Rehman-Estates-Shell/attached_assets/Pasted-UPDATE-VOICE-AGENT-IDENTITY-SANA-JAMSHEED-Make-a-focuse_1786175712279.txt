@@ -1,0 +1,217 @@
+UPDATE VOICE AGENT IDENTITY: SANA → JAMSHEED
+
+Make a focused identity change across the Rehman Estates Front Desk demo.
+
+IMPORTANT:
+- Do NOT redesign anything.
+- Do NOT change the architecture.
+- Do NOT change the listing dataset.
+- Do NOT change internal data models.
+- Do NOT change the dashboard language strategy.
+- Do NOT add any new features.
+- Only change the AI agent identity from female Sana to male Jamsheed.
+
+==================================================
+1. AGENT IDENTITY
+==================================================
+
+Replace:
+
+Sana
+ثنا
+
+with:
+
+Jamsheed
+جمشید
+
+The official agent name should now be:
+
+Jamsheed / جمشید
+
+Use "جمشید" in customer-facing Urdu content.
+
+Use "Jamsheed" where an English/internal display is required.
+
+==================================================
+2. URDU GREETING
+==================================================
+
+Replace the current Sana greeting:
+
+"السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں ثنا ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟"
+
+with:
+
+"السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں جمشید ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟"
+
+Keep the greeting natural and professional for a Pakistani male property consultant.
+
+==================================================
+3. SEARCH THE ENTIRE CODEBASE
+==================================================
+
+Search for all occurrences of:
+
+Sana
+sana
+ثنا
+female agent references
+agent name references
+
+Check:
+
+- CallPanel
+- call page
+- transcript/demo data
+- Settings
+- Greeting Prompt
+- agent configuration
+- mock data
+- comments/documentation where relevant
+- any UI labels
+- any accessibility labels
+- any hardcoded customer-facing strings
+
+Replace only references that identify the voice agent.
+
+Do NOT replace unrelated text accidentally.
+
+==================================================
+4. CALL PANEL
+==================================================
+
+The CallPanel should identify the agent as:
+
+جمشید
+
+Example:
+
+جمشید:
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔
+
+Customer:
+مجھے ڈی ایچ اے فیز سکس میں سوا پانچ مرلہ کا پلاٹ چاہیے۔
+
+Keep:
+
+- Urdu Nastaliq
+- RTL
+- existing transcript styling
+- existing LIVE state
+- existing Listening / Thinking / Speaking states
+
+unchanged.
+
+==================================================
+5. SETTINGS
+==================================================
+
+If Settings contains:
+
+Agent Name:
+Sana
+
+or any equivalent value, change it to:
+
+Jamsheed
+
+If there is an Urdu customer-facing value, use:
+
+جمشید
+
+Keep all Settings labels in English.
+
+==================================================
+6. AGENT PERSONA
+==================================================
+
+The agent should now be represented as a professional Pakistani male property consultant.
+
+Do NOT change the existing UI persona options unless necessary.
+
+Maintain the existing professional tone:
+
+Professional & Precise
+
+The voice/personality should feel:
+
+- professional
+- confident
+- respectful
+- warm
+- knowledgeable
+- natural in Pakistani Urdu
+
+Avoid overly casual language.
+
+==================================================
+7. DEMO TRANSCRIPT
+==================================================
+
+Update any demo transcript that currently says:
+
+Sana
+
+to:
+
+جمشید
+
+Example:
+
+جمشید:
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں جمشید ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟
+
+Caller:
+مجھے ڈی ایچ اے فیز سکس میں سوا پانچ مرلہ کا پلاٹ چاہیے۔
+
+==================================================
+8. DO NOT CHANGE INTERNAL DATA
+==================================================
+
+Do NOT change:
+
+intent
+propertyType
+listingType
+sizeMarla
+budgetMaxPKR
+features
+listing IDs
+prices
+search logic
+matching logic
+RegistryCard state
+MatchList logic
+
+This is ONLY an agent identity change.
+
+==================================================
+9. VALIDATION
+==================================================
+
+After implementation:
+
+1. Search the entire codebase for "Sana".
+2. Search for "ثنا".
+3. Confirm there are no remaining customer-facing references to Sana/ثنا.
+4. Confirm Jamsheed/جمشید appears correctly.
+5. Confirm the Urdu greeting uses "میں جمشید ہوں".
+6. Confirm CallPanel displays جمشید correctly.
+7. Confirm Settings uses Jamsheed where applicable.
+8. Confirm Nastaliq rendering is unchanged.
+9. Confirm RegistryCard and MatchList are unchanged.
+10. Confirm no console errors.
+
+FINAL REPORT:
+
+Agent identity: Jamsheed / جمشید
+Old identity removed: Sana / ثنا
+Greeting updated: PASS/FAIL
+CallPanel updated: PASS/FAIL
+Settings updated: PASS/FAIL
+Demo transcript updated: PASS/FAIL
+Existing functionality preserved: PASS/FAIL
+Console errors: YES/NO
+
+Do not make any changes outside this scope.

@@ -1,0 +1,888 @@
+REDESIGN TASK — REHMAN ESTATES PREMIUM LIQUID-GLASS UI
+
+You are a senior product designer + frontend engineer specializing in premium SaaS dashboards, voice AI interfaces, glassmorphism, and production-grade UX.
+
+IMPORTANT:
+Redesign the EXISTING Rehman Estates application. Do NOT rebuild the application from scratch.
+
+The current functionality is already implemented and working. Your job is to transform the visual system into a premium, highly polished Liquid Glass / AI Command Center experience while preserving all existing functionality.
+
+==================================================
+1. CORE DESIGN DIRECTION
+==================================================
+
+Transform the current Rehman Estates UI into:
+
+PREMIUM LIQUID GLASS
++
+AI VOICE COMMAND CENTER
++
+PROPERTY REGISTRY
++
+PAKISTANI REAL ESTATE IDENTITY
+
+The visual quality should feel comparable to a high-end modern AI SaaS dashboard.
+
+Use the provided reference image as VISUAL INSPIRATION for:
+
+- glass panels
+- depth
+- translucent surfaces
+- subtle gradients
+- premium dashboard layout
+- luminous borders
+- spacing
+- hierarchy
+- modern navigation
+- KPI cards
+- sophisticated dark interface
+
+DO NOT COPY the reference literally.
+
+Create a unique Rehman Estates identity.
+
+The product must NOT look like:
+- a generic chatbot
+- a generic AI dashboard
+- an ordinary CRM
+- a template
+- an over-animated website
+
+It should feel like a real premium AI property operations platform.
+
+==================================================
+2. MOST IMPORTANT RULE — DO NOT BREAK FUNCTIONALITY
+==================================================
+
+Before modifying anything:
+
+1. Inspect the entire existing frontend.
+2. Understand all routes.
+3. Understand current component relationships.
+4. Understand current state management.
+5. Understand current mock data.
+6. Understand the current voice-agent integration.
+7. Understand RegistryCard.
+8. Understand MatchList.
+9. Understand CallPanel.
+10. Understand the current Urdu implementation.
+
+DO NOT remove or rewrite working functionality.
+
+Preserve:
+
+- voice functionality
+- Uplift integration
+- transcript
+- lead extraction
+- RegistryCard state
+- stamp animation
+- MatchList
+- property filtering
+- real listings.json
+- lexicon.json
+- routes
+- navigation
+- responsive behavior
+- existing data structures
+- existing internal English field values
+- all working interactions
+
+Only improve presentation, UX and visual architecture unless a small refactor is absolutely required.
+
+==================================================
+3. GLOBAL VISUAL SYSTEM
+==================================================
+
+Replace the current flat dark UI with a sophisticated liquid-glass system.
+
+Background:
+
+- deep navy/near-black base
+- subtle blue/cyan ambient gradients
+- very low-opacity radial glows
+- extremely subtle background noise/grain if practical
+- no distracting patterns
+
+Example visual direction:
+
+Deep background
+    ↓
+ambient blue/cyan glow
+    ↓
+transparent glass surfaces
+    ↓
+soft borders
+    ↓
+subtle shadows
+    ↓
+clear white typography
+
+Glass surfaces should use:
+
+- translucent backgrounds
+- backdrop-filter blur
+- subtle saturation
+- thin luminous borders
+- soft shadows
+- slight inner highlight
+- controlled transparency
+
+IMPORTANT:
+
+Do NOT make text low contrast because of transparency.
+
+Every important label/value must remain highly readable.
+
+Text must ALWAYS win over the glass effect.
+
+If glass reduces readability, increase surface opacity.
+
+==================================================
+4. COLOR SYSTEM
+==================================================
+
+Create centralized CSS variables.
+
+Use approximately:
+
+Background:
+#060B16
+#0A1020
+#0D1424
+
+Glass:
+rgba(255,255,255,0.04)
+rgba(255,255,255,0.06)
+rgba(255,255,255,0.08)
+
+Borders:
+rgba(255,255,255,0.10)
+rgba(255,255,255,0.16)
+
+Primary luminous accent:
+electric blue / cyan
+
+Secondary:
+teal
+
+Success:
+survey green
+
+Live state:
+registry red
+
+Brand accent:
+very subtle Rehman gold
+
+Do NOT overuse gold.
+
+Blue/cyan should provide the modern AI/glass identity.
+
+Gold should remain an accent for:
+- selected property
+- important confirmation
+- brand details
+- premium actions
+
+RED MUST ONLY REPRESENT LIVE / ACTIVE CALL STATE.
+
+Do not use red randomly.
+
+==================================================
+5. TYPOGRAPHY
+==================================================
+
+Preserve and improve the current typography system.
+
+Use:
+
+Archivo:
+- headings
+- navigation
+- labels
+- buttons
+- UI
+
+JetBrains Mono:
+- property values
+- numbers
+- IDs
+- technical values
+- lead data
+
+Noto Nastaliq Urdu:
+- Urdu transcript
+- Urdu customer speech
+- Urdu property values where appropriate
+- Urdu voice-related text
+
+IMPORTANT:
+
+English UI must remain extremely readable.
+
+Urdu must render correctly:
+
+direction: rtl;
+text-align: right;
+
+Do NOT apply RTL globally.
+
+Only Urdu content should be RTL.
+
+==================================================
+6. SIDEBAR REDESIGN
+==================================================
+
+Transform the existing sidebar into a premium glass navigation rail.
+
+Structure:
+
+REHMAN
+ESTATES
+
+MENU
+
+Dashboard
+Leads
+Live Call
+
+SYSTEM
+
+Settings
+
+Bottom:
+
+Agent Desk
+● Online
+
+Use:
+
+- glass background
+- subtle vertical border
+- soft active-state glow
+- elegant icons
+- clear typography
+- generous spacing
+
+Active navigation should NOT be a large flat yellow rectangle.
+
+Instead use:
+
+- translucent highlighted surface
+- thin accent indicator
+- subtle blue/gold glow
+- slightly brighter text
+
+Keep navigation extremely readable.
+
+==================================================
+7. TOP BAR
+==================================================
+
+Redesign the top bar as a floating glass control layer.
+
+Include:
+
+- search
+- notifications
+- current time
+- user/agent identity if already implemented
+
+Search should look like a glass input.
+
+Do not over-round everything.
+
+Use controlled 8–14px radius.
+
+==================================================
+8. DASHBOARD
+==================================================
+
+Redesign the dashboard into a premium command center.
+
+Hero heading:
+
+Front Desk Overview
+
+Subtitle:
+
+Live metrics and recent activity for Rehman Estates.
+
+Create premium glass KPI cards:
+
+ACTIVE CALLS
+LEADS CAPTURED
+FOLLOW-UPS
+CONVERSION RATE
+
+Cards should have:
+
+- large readable value
+- small descriptive label
+- subtle trend indicator
+- small icon
+- glass depth
+- soft hover interaction
+
+Do NOT use excessive gradients.
+
+Numbers must be extremely readable.
+
+==================================================
+9. LIVE CALL — MOST IMPORTANT SCREEN
+==================================================
+
+The Live Call screen is the PRIMARY visual centerpiece.
+
+Make it significantly more impressive than the other pages.
+
+Layout:
+
+LEFT:
+Voice interaction
+
+RIGHT:
+Lead Registry
+
+Suggested structure:
+
+------------------------------------------------
+
+LIVE CALL
+
+● LIVE
+
+Tareeq
+
+Listening...
+
+[voice waveform / voice visualizer]
+
+Sana/Tareeq transcript area
+
+------------------------------------------------
+
+RIGHT:
+
+LEAD RECORD
+
+INTENT
+خرید ✓
+
+TYPE
+پلاٹ ✓
+
+SIZE
+5.25 مرلہ ✓
+
+SOCIETY
+DHA Lahore ✓
+
+PHASE
+6 ✓
+
+BUDGET
+2 کروڑ 25 لاکھ ✓
+
+FEATURES
+کارنر ✓
+
+------------------------------------------------
+
+MATCHES
+
+Property cards
+
+------------------------------------------------
+
+The central voice area can have:
+
+- subtle animated waveform
+- soft circular glow
+- very subtle glass rings
+- microphone activity visualization
+
+DO NOT create distracting sci-fi animation.
+
+Animation should communicate:
+
+LISTENING
+THINKING
+SPEAKING
+
+==================================================
+10. CALL STATES
+==================================================
+
+Clearly display:
+
+● LIVE
+
+Listening
+سن رہا ہوں...
+
+Thinking
+سوچ رہا ہوں...
+
+Speaking
+بات کر رہا ہوں...
+
+The active state should have subtle visual feedback.
+
+Example:
+
+Listening:
+soft cyan pulse
+
+Thinking:
+slow rotating indicator
+
+Speaking:
+waveform activity
+
+Keep the LIVE indicator registry red.
+
+==================================================
+11. URDU EXPERIENCE
+==================================================
+
+The voice experience must feel Pakistani.
+
+Use Tareeq as the male AI agent name.
+
+Greeting:
+
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔
+میں طارق ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟
+
+Caller example:
+
+مجھے ڈی ایچ اے فیز سکس میں
+سوا پانچ مرلہ کا پلاٹ چاہیے۔
+
+Transcript must use:
+
+Noto Nastaliq Urdu
+
+with:
+
+direction: rtl;
+text-align: right;
+
+Make Urdu highly readable.
+
+Do NOT mix Urdu and English randomly.
+
+==================================================
+12. REGISTRY CARD
+==================================================
+
+Preserve the existing RegistryCard functionality.
+
+Transform it visually into:
+
+PROPERTY REGISTRY / LEAD RECORD
+
+It should look like a premium digital property document floating inside glass.
+
+Fields:
+
+INTENT
+TYPE
+SIZE
+SOCIETY
+PHASE
+BUDGET
+FEATURES
+TIMELINE
+NAME
+PHONE
+
+Empty:
+
+—
+
+Filled:
+
+value ✓
+
+Preserve the existing stamp animation.
+
+When a new field is extracted:
+
+- subtle scale
+- opacity transition
+- small confirmation glow
+- green confirmation mark
+
+Do NOT replay animation unnecessarily.
+
+Rows must remain fixed height.
+
+No layout jumping.
+
+==================================================
+13. SHOW WHAT THE CUSTOMER ACTUALLY SAID
+==================================================
+
+This is critical.
+
+For important extracted fields show the original phrase beneath the normalized value.
+
+Example:
+
+SIZE
+5.25 مرلہ ✓
+"سوا پانچ مرلہ"
+
+BUDGET
+2 کروڑ 25 لاکھ ✓
+"سوا دو کروڑ"
+
+This visually communicates:
+
+VOICE → UNDERSTANDING → STRUCTURED DATA
+
+Make this one of the strongest visual moments of the product.
+
+==================================================
+14. MATCH LIST
+==================================================
+
+Redesign property matches as premium glass property cards.
+
+Example:
+
+RE-001
+
+DHA LAHORE · PHASE 6
+
+5 مرلہ · کارنر
+
+دو کروڑ پانچ لاکھ
+
+Corner plot · 40ft road
+Ready for construction
+
+● Available
+
+Use:
+
+- glass surface
+- clear hierarchy
+- property ID in mono
+- Urdu property details
+- Pakistani price formatting
+- subtle availability indicator
+
+Do not make cards unnecessarily large.
+
+==================================================
+15. LEADS PAGE
+==================================================
+
+Redesign the Leads page using the same glass design system.
+
+Keep the admin structure in English:
+
+Lead Directory
+Contact
+Interest
+Budget / Area
+Status
+Received
+
+But make the actual demo data Pakistani.
+
+Avoid American demo data such as:
+
+$2.5M
+New York
+Upper East Side
++1 numbers
+
+Use:
+
+DHA Lahore
+Bahria Town Lahore
+Gulberg Lahore
+DHA Phase 6
+Bahria Town Phase 8
+
+Use Pakistani phone formats:
+
++92 ...
+
+Use Pakistani pricing:
+
+2 کروڑ
+2 کروڑ 50 لاکھ
+1.5 کروڑ
+
+Use realistic Pakistani names.
+
+==================================================
+16. SETTINGS PAGE
+==================================================
+
+Keep configuration UI in English.
+
+Change demo business data to:
+
+Agency Name:
+Rehman Estates
+
+Primary Phone:
++92 XXX XXXXXXX
+
+Office Location:
+Lahore, Pakistan
+
+Agent:
+
+Tareeq
+
+Greeting prompt should reflect the Urdu voice experience.
+
+Keep:
+
+Professional & Precise
+Warm & Welcoming
+
+Keep configuration labels in English.
+
+==================================================
+17. DO NOT TRANSLATE THE ADMIN UI
+==================================================
+
+IMPORTANT.
+
+Do NOT translate:
+
+Dashboard
+Leads
+Settings
+Live Call
+Search
+Status
+Action Center
+Agent Persona
+Agency Profile
+
+These are business/admin interface elements.
+
+Use Urdu for:
+
+- voice
+- transcript
+- extracted customer phrases
+- property terminology
+- customer-facing AI responses
+- Pakistani prices where appropriate
+
+This creates:
+
+PROFESSIONAL ADMIN UI
++
+PAKISTANI URDU AI EXPERIENCE
+
+==================================================
+18. ANIMATION SYSTEM
+==================================================
+
+Use animation carefully.
+
+Allowed:
+
+- subtle panel fade
+- glass hover
+- soft border glow
+- KPI count-in
+- waveform animation
+- registry stamp
+- match card appearance
+- active call pulse
+- transcript reveal
+
+Avoid:
+
+- excessive bouncing
+- large rotations
+- aggressive parallax
+- constant moving backgrounds
+- distracting gradients
+- unnecessary 3D effects
+
+Respect:
+
+prefers-reduced-motion: reduce
+
+==================================================
+19. RESPONSIVENESS
+==================================================
+
+Must remain excellent at:
+
+1280px desktop
+1024px laptop
+768px tablet
+390px mobile
+
+At mobile:
+
+- sidebar becomes compact/mobile navigation
+- dashboard cards stack
+- Live Call stacks voice panel above registry
+- registry remains readable
+- Urdu remains RTL
+- no horizontal overflow
+- no clipped text
+- no overlapping glass panels
+
+==================================================
+20. READABILITY REQUIREMENT
+==================================================
+
+THIS IS CRITICAL.
+
+Every piece of important information must be immediately readable.
+
+Do NOT allow:
+
+- low contrast
+- text over bright gradients
+- text hidden behind glass
+- tiny labels
+- excessive transparency
+- excessive blur
+- overly thin fonts
+
+Use sufficient opacity behind text.
+
+Glass is the STYLE.
+
+Readability is the PRIORITY.
+
+==================================================
+21. PERFORMANCE
+==================================================
+
+Do not sacrifice performance for visual effects.
+
+Avoid:
+
+- expensive continuous animations
+- unnecessary canvas effects
+- huge background assets
+- heavy libraries
+- unnecessary dependencies
+
+Prefer:
+
+CSS
+CSS gradients
+backdrop-filter
+transform
+opacity
+
+Use GPU-friendly animations.
+
+==================================================
+22. COMPONENT REUSE
+==================================================
+
+Before creating new components, inspect existing ones.
+
+Reuse where possible.
+
+Create shared components only where appropriate:
+
+GlassPanel
+GlassCard
+StatusPill
+GlassButton
+SectionHeader
+
+Do not duplicate styles unnecessarily.
+
+Create centralized design tokens.
+
+==================================================
+23. DO NOT CHANGE DATA LOGIC
+==================================================
+
+Do NOT modify:
+
+listings.json
+lexicon.json
+lead schema
+voice tool contracts
+search logic
+Uplift connection
+existing state logic
+
+unless absolutely necessary for presentation.
+
+The redesign must be visual-first.
+
+==================================================
+24. FINAL QUALITY CHECK
+==================================================
+
+After implementation:
+
+1. Run the application.
+2. Visit every existing route.
+3. Test Dashboard.
+4. Test Leads.
+5. Test Live Call.
+6. Test Settings.
+7. Test RegistryCard.
+8. Test MatchList.
+9. Test Urdu rendering.
+10. Test responsive layout.
+11. Check browser console.
+12. Check for overflow.
+13. Check text contrast.
+14. Check glass transparency.
+15. Check animations.
+16. Check existing functionality.
+
+Do not stop at "it compiles."
+
+Actually inspect the rendered UI.
+
+==================================================
+25. SUCCESS CRITERIA
+==================================================
+
+The final product should feel like:
+
+"Apple-level visual restraint + modern AI SaaS + liquid glass + Pakistani real-estate intelligence."
+
+The judge should immediately understand:
+
+1. This is a property AI platform.
+2. It understands Urdu.
+3. It extracts customer requirements in real time.
+4. It converts speech into structured property data.
+5. It searches relevant properties.
+6. It looks like a serious production product.
+
+MOST IMPORTANT:
+
+Do not make the interface visually impressive at the cost of clarity.
+
+The final hierarchy must be:
+
+CLARITY
+→ TRUST
+→ PRODUCT FUNCTION
+→ PREMIUM VISUALS
+→ ANIMATION
+
+Inspect first.
+Plan the redesign.
+Then implement carefully.
+After implementation, report exactly which files were changed and confirm that no existing functionality was broken.

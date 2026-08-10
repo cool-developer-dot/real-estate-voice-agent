@@ -1,0 +1,22 @@
+{
+  "name": "rehman-estates-front-desk",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node init && vite",
+    "build": "node init && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@livekit/components-react": "^2.9.14",
+    "@upliftai/assistants-react": "^0.0.4",
+    "livekit-client": "^2.15.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.3.5"
+  }
+}

@@ -1,0 +1,110 @@
+Add the lead-capture engine and all four tools. Re-read the "Critical React rule
+for tools" section of replit.md before you plan — the stable-identity and
+ref-based-state requirements are mandatory, not suggestions.
+
+## src/agent/useLeadState.js
+Export a hook `useLeadState()` managing this exact object:
+  intent, propertyType, sizeMarla, sizeLabel, society, phase, budgetMaxPKR,
+  budgetLabel, features, timeline, financing, name, phone
+All null except features which is [].
+
+It returns { lead, leadRef, mergeLead, justFilled, matches, setMatches, visits,
+addVisit, handoff, setHandoff, reset }.
+
+- mergeLead(patch): ignores null/undefined/'' values; merges the rest via the
+  functional setState form; adds every key whose value actually CHANGED to
+  `justFilled` (a Set); clears those keys 400ms later. Use one timer per key,
+  cleared on unmount.
+- leadRef is a ref mirroring `lead`, updated in an effect. Tool handlers read
+  leadRef.current, never `lead`.
+- mergeLead, setMatches, addVisit, setHandoff, reset are all wrapped in
+  useCallback with stable identity.
+- reset() clears lead, matches, visits, handoff and transcript.
+
+## src/agent/tools.js
+Export `makeTools({ leadRef, mergeLead, setMatches, addVisit, setHandoff, onToolCall })`
+returning an array of four tool config objects in the shape defined in replit.md.
+
+Wrap EVERY handler body in try/catch. On throw, return
+  JSON.stringify({ error: String(err), presentationInstructions:
+    "Tell the caller you are having a technical issue and offer to call back." })
+Call onToolCall(name, args) at the top of every handler so the UI can show activity.
+
+### 1. update_lead   timeout 5
+description: "Record newly learned details about the caller's property
+requirement. Call immediately whenever any new detail is learned, even a single
+field. Do not batch and do not wait."
+properties (all optional, required: []):
+  intent string enum [buy, rent, sell, invest]
+  propertyType string enum [plot, house, apartment, commercial]
+  sizeMarla number   ("1 kanal = 20 marla")
+  sizeLabel string   ("exactly what the caller said")
+  society string · phase string
+  budgetMaxPKR number ("integer rupees, e.g. 20000000")
+  budgetLabel string  ("raw utterance, e.g. do crore")
+  features array of string enum [corner, park_facing, possession, file, boulevard]
+  timeline string · financing string enum [cash, installments]
+  name string · phone string
+handler: mergeLead(args); return
+  { result: "saved", presentationInstructions:
+    "Noted. Continue the conversation naturally. Do not read the saved fields back to the caller." }
+
+### 2. search_listings   timeout 8
+description: "Search Rehman Estates inventory. Call once propertyType and either
+society or budget are known."
+properties (required: []): intent, propertyType, sizeMarla, society, phase,
+budgetMaxPKR, features (array).
+Merge args over leadRef.current so a partial call still searches on everything
+known so far, then also mergeLead(args).
+Filter src/data/listings.json — read the file for its real field names first:
+  1. listingType matches intent: buy|invest -> "sale", rent -> "rent".
+     If intent is unknown, default to "sale".
+  2. propertyType must match when provided.
+  3. sizeMarla within +/-25% when provided (skip listings whose sizeMarla is null).
+  4. society: case-insensitive substring match against (society + " " + phase).
+  5. budgetMaxPKR: keep pricePKR <= budgetMaxPKR * 1.05.
+Rank by: society matched (desc), count of matching features (desc), then
+smallest (budget - price) among those under budget.
+Take top 3, call setMatches(top3), and return:
+  result: the three full listing objects
+  presentationInstructions when non-empty:
+    "Read these out in Urdu, at most three. For each say size, block, one
+     feature, and the price using priceLabelUrdu exactly as written. Then ask
+     which sounds closest. Do not mention any property not in this list."
+  presentationInstructions when empty:
+    "No matches. Tell the caller honestly that nothing matches, then suggest ONE
+     alternative: a nearby society, a smaller size, or a slightly higher budget.
+     Do not invent a property."
+
+### 3. schedule_visit   timeout 5
+properties: listingId (required), preferredDay (required), preferredTime,
+callerName, callerPhone.
+handler: reference = "RE-" + 4 random digits; addVisit({ ...args, reference });
+if callerName/callerPhone present, mergeLead({ name, phone }). Return the
+reference with presentationInstructions:
+  "Confirm the visit warmly in one sentence with the day and time. Give the
+   reference number. Then ask for their name and phone if you do not have both."
+
+### 4. handoff_to_dealer   timeout 5
+properties: reason (required, enum: price_negotiation, complex_query,
+caller_requested, agent_uncertain), summary (required).
+handler: setHandoff({ reason, summary, at: Date.now() }); presentationInstructions:
+  "Tell the caller Rehman sahib will call back shortly. Ask for the best time to
+   call. Then close politely."
+
+## Wiring in App.jsx
+- Call useLeadState() ABOVE UpliftAIRoom and pass what CallPanel/RegistryCard need.
+- const tools = useMemo(() => makeTools({...}), []);   // empty deps, stable identity
+- Pass tools to <UpliftAIRoom tools={tools}>.
+- Keep a `toolLog` state: the last 5 { name, args, at } from onToolCall.
+
+## RegistryCard.jsx (placeholder styling only for now)
+Render every lead field as a row: uppercase label in Archivo 11px
+letter-spacing .08em colour --ink-2 on the left, value in JetBrains Mono 14px
+--ink on the right, em-dash in --ink-3 when empty. Fixed 36px row height.
+
+VERIFY before you report done:
+- Log the tools array once at registration and confirm all four names appear.
+- Confirm makeTools is called exactly once for the lifetime of the page.
+- Confirm no handler references a React state variable directly.
+Tell me the console line I should watch to confirm a tool actually fired.

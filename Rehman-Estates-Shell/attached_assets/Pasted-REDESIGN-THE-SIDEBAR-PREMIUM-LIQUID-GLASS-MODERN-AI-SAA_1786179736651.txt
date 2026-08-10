@@ -1,0 +1,410 @@
+REDESIGN THE SIDEBAR — PREMIUM LIQUID GLASS / MODERN AI SAAS
+
+Use the attached reference image as the visual inspiration for the sidebar.
+
+Redesign ONLY the sidebar/navigation. Do NOT change the existing application functionality, routes, page content, data, APIs, or business logic.
+
+The goal is a highly polished, production-grade sidebar inspired by the reference:
+- translucent liquid-glass surface
+- soft pastel ambient gradients
+- clean typography
+- minimal line icons
+- excellent spacing
+- premium SaaS appearance
+- subtle depth
+- extremely readable
+
+IMPORTANT:
+Do NOT make it look like a generic AI-generated dashboard.
+It should feel like a real premium product.
+
+==================================================
+1. SIDEBAR STRUCTURE
+==================================================
+
+Create a fixed/sticky left sidebar.
+
+Desktop width:
+~250–270px.
+
+Structure:
+
+TOP
+Rehman Estates branding
+
+MAIN
+Dashboard
+Leads
+Live Call
+
+SYSTEM
+Settings
+
+Keep the existing routes and navigation exactly as they are.
+
+Do NOT invent new pages.
+
+==================================================
+2. BACKGROUND
+==================================================
+
+Use a very subtle liquid-glass background.
+
+Base:
+very light cool white / blue-gray.
+
+Add extremely subtle ambient gradients:
+
+- soft cyan/blue near upper areas
+- extremely subtle lavender/purple toward lower areas
+- slight white highlights
+
+The gradients must feel like light passing through glass.
+
+Do NOT use:
+- strong rainbow gradients
+- saturated neon
+- excessive blur
+- distracting glow
+
+The sidebar should remain highly readable.
+
+==================================================
+3. GLASS EFFECT
+==================================================
+
+Apply:
+
+backdrop-filter: blur(...)
+-webkit-backdrop-filter: blur(...)
+
+Use:
+
+background:
+rgba(255,255,255,0.45–0.65)
+
+border:
+1px solid rgba(255,255,255,0.65)
+
+Add a very subtle inner highlight.
+
+The glass should feel:
+
+soft
+clean
+premium
+lightweight
+
+NOT transparent enough to reduce readability.
+
+==================================================
+4. BRAND HEADER
+==================================================
+
+At the top create a refined Rehman Estates brand block.
+
+Example:
+
+[logo] REHMAN
+       ESTATES
+
+or preserve the existing logo/brand treatment if already implemented.
+
+Do NOT replace the actual brand identity.
+
+Make the brand:
+
+- prominent
+- elegant
+- clean
+- compact
+
+Use approximately 18–22px for the main brand text.
+
+Add a subtle divider underneath.
+
+==================================================
+5. NAVIGATION GROUPS
+==================================================
+
+Use clear section labels.
+
+Example:
+
+MAIN
+
+▦ Dashboard
+♧ Leads
+☎ Live Call
+
+SYSTEM
+
+⚙ Settings
+
+Section labels:
+
+- small
+- uppercase
+- letter spacing
+- muted dark gray
+- 11–12px
+
+Do not make section labels visually stronger than navigation items.
+
+==================================================
+6. NAVIGATION ITEMS
+==================================================
+
+Each navigation item should have:
+
+[icon] Label
+
+Height:
+~42–46px.
+
+Horizontal padding:
+~12–14px.
+
+Border radius:
+10–12px.
+
+Typography:
+15–16px.
+
+Use a modern clean sans-serif.
+
+Icons should be:
+
+- 18–20px
+- thin/medium stroke
+- consistent sizing
+- visually aligned
+
+Do NOT use giant icons.
+
+==================================================
+7. ACTIVE STATE
+==================================================
+
+The active route should look like the reference.
+
+Use a translucent white glass pill:
+
+background:
+rgba(255,255,255,0.65–0.8)
+
+border:
+1px solid rgba(255,255,255,0.7)
+
+very subtle shadow.
+
+Example:
+
+┌──────────────────────────────┐
+│  ▦  Dashboard                │
+└──────────────────────────────┘
+
+The active item should feel selected without becoming a giant colored block.
+
+Use a subtle brand accent on the icon or a very thin indicator.
+
+==================================================
+8. HOVER STATE
+==================================================
+
+On hover:
+
+- slightly brighter glass
+- tiny background increase
+- icon becomes slightly stronger
+- text becomes slightly darker
+
+Transition:
+150–200ms.
+
+No large movement.
+
+No scaling.
+
+No glow.
+
+==================================================
+9. BOTTOM AREA
+==================================================
+
+Keep Settings at the bottom.
+
+If existing application has other bottom actions, preserve them.
+
+Separate the bottom area with a subtle horizontal divider.
+
+Example:
+
+────────────────────
+
+⚙ Settings
+
+The bottom should feel anchored to the bottom of the sidebar.
+
+==================================================
+10. TYPOGRAPHY
+==================================================
+
+Use the existing project typography if already established.
+
+Otherwise use a clean modern sans-serif.
+
+Navigation:
+
+15–16px
+
+Section labels:
+
+11–12px
+
+Brand:
+
+18–22px
+
+Use:
+
+font-weight 400–500 for navigation
+font-weight 600 for active item
+
+Avoid excessive bold typography.
+
+==================================================
+11. SPACING
+==================================================
+
+Follow a disciplined spacing system.
+
+Sidebar:
+
+20–24px horizontal padding.
+
+Brand → divider:
+20–24px.
+
+Divider → section:
+20–24px.
+
+Navigation items:
+4–6px vertical gap.
+
+Between navigation groups:
+24–32px.
+
+Do NOT leave huge unexplained empty spaces.
+
+==================================================
+12. RESPONSIVENESS
+==================================================
+
+Desktop:
+Full sidebar.
+
+Tablet:
+Slightly narrower sidebar if necessary.
+
+Mobile:
+Convert to a compact navigation/drawer.
+
+Do NOT allow the sidebar to cover important content permanently.
+
+Existing responsive behavior must remain functional.
+
+==================================================
+13. ACCESSIBILITY
+==================================================
+
+Every navigation item must:
+
+- remain keyboard accessible
+- have visible focus state
+- have sufficient contrast
+- have appropriate aria-labels where needed
+
+Do not sacrifice readability for glass effects.
+
+==================================================
+14. IMPORTANT — PRESERVE APPLICATION
+==================================================
+
+DO NOT CHANGE:
+
+- routes
+- navigation logic
+- page components
+- API calls
+- state management
+- authentication
+- lead data
+- voice functionality
+- Uplift integration
+- existing functionality
+
+Only improve the sidebar's visual design and responsive presentation.
+
+==================================================
+15. VISUAL TARGET
+==================================================
+
+The final sidebar should communicate:
+
+PREMIUM
+MODERN
+LIGHT
+INTELLIGENT
+TRUSTWORTHY
+PRODUCTION-READY
+
+Visual hierarchy:
+
+Brand
+↓
+Section
+↓
+Navigation
+↓
+Active state
+↓
+Bottom settings
+
+The reference image should guide the overall aesthetic:
+
+soft liquid glass + subtle blue/lavender atmosphere + clean navigation.
+
+But adapt it specifically to Rehman Estates.
+
+==================================================
+16. FINAL QA
+==================================================
+
+After implementation:
+
+1. Test Dashboard navigation.
+2. Test Leads navigation.
+3. Test Live Call navigation.
+4. Test Settings navigation.
+5. Verify active state on every route.
+6. Verify hover state.
+7. Verify keyboard focus.
+8. Test 1280px desktop.
+9. Test tablet.
+10. Test 390px mobile.
+11. Check text contrast.
+12. Check icons alignment.
+13. Check that no content is hidden behind sidebar.
+14. Check browser console for errors.
+
+IMPORTANT FINAL RULE:
+
+Do not make the sidebar "more decorative."
+
+Make it MORE REFINED.
+
+The reference's strength is its simplicity:
+glass + spacing + typography + subtle gradients.
+
+Rehman Estates should feel like a premium real-estate intelligence platform, not a template.

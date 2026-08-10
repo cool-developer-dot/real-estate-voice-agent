@@ -1,0 +1,479 @@
+REDESIGN THE NOTIFICATIONS PANEL — PREMIUM PRODUCTION-GRADE UI
+
+Use the current notification panel as the starting point.
+
+Redesign ONLY the notification dropdown/panel visually.
+
+Do NOT change:
+- notification data
+- notification types
+- read/unread logic
+- mark-all-read functionality
+- dismiss functionality
+- routing
+- state management
+- APIs
+- business logic
+
+The goal is to make this look like a polished, premium SaaS notification center for Rehman Estates.
+
+==================================================
+1. OVERALL DESIGN
+==================================================
+
+Create a refined liquid-glass notification panel.
+
+It should feel:
+
+- premium
+- clean
+- structured
+- professional
+- trustworthy
+- production-ready
+
+NOT:
+
+- generic AI-generated UI
+- overly colorful
+- overly transparent
+- excessively rounded
+- visually noisy
+
+The panel should be visually related to the new Rehman Estates glassmorphic sidebar.
+
+==================================================
+2. PANEL CONTAINER
+==================================================
+
+Use a floating notification panel.
+
+Width:
+~380–430px desktop.
+
+Border radius:
+18–22px.
+
+Background:
+
+rgba(255,255,255,0.78–0.90)
+
+with:
+
+backdrop-filter: blur(24px)
+-webkit-backdrop-filter: blur(24px)
+
+Border:
+
+1px solid rgba(255,255,255,0.75)
+
+Add a very subtle shadow.
+
+IMPORTANT:
+
+The background page should NOT be strongly visible through the panel.
+
+Current problem:
+
+text and cards behind the notification panel are too visible.
+
+Fix this.
+
+Notifications must have a clear visual surface.
+
+==================================================
+3. HEADER
+==================================================
+
+Create a clean header:
+
+Notifications
+3 unread
+
+                         ✓ Mark all read
+
+Use:
+
+Notifications:
+20–24px
+font-weight: 600
+
+"3 unread":
+14–16px
+muted
+
+"Mark all read":
+compact secondary action.
+
+The button should have:
+
+- subtle glass background
+- thin border
+- small check icon
+- blue/indigo accent
+
+Do NOT make it oversized.
+
+Add a subtle divider underneath.
+
+==================================================
+4. NOTIFICATION ITEM
+==================================================
+
+Each notification should be a compact structured row.
+
+Example:
+
+┌──────────────────────────────────────────┐
+│ [icon]  Follow-up Due                 ● │
+│         Ali Raza — سوا چار...             │
+│         DUE IN 15 MINS                    │
+└──────────────────────────────────────────┘
+
+Structure:
+
+ICON
+↓
+TITLE
+↓
+CONTEXT
+↓
+TIME / STATUS
+
+The title should be the strongest text.
+
+==================================================
+5. ICONS
+==================================================
+
+Use consistent 38–44px icon containers.
+
+Examples:
+
+Follow-up Due:
+phone/callback icon
+
+Callback Scheduled:
+calendar icon
+
+New Lead Captured:
+person-plus icon
+
+Icon containers should be subtle.
+
+Use very light tinted backgrounds:
+
+Follow-up:
+soft amber
+
+Callback:
+soft indigo/blue
+
+New Lead:
+soft blue/green
+
+Do NOT use strong gradients.
+
+Do NOT make the icon containers glow heavily.
+
+==================================================
+6. STATUS DOT
+==================================================
+
+Unread notifications should have a small status dot on the right.
+
+Example:
+
+●
+
+Use a small 7–9px circle.
+
+Do NOT make it huge.
+
+Read notifications should either:
+
+- remove the dot
+- or reduce its opacity
+
+This should immediately communicate unread state.
+
+==================================================
+7. NOTIFICATION TYPOGRAPHY
+==================================================
+
+Title:
+
+16–18px
+font-weight: 600
+
+Example:
+
+Follow-up Due
+
+Context:
+
+14–16px
+muted
+
+Example:
+
+Ali Raza — سوا چار کروڑ
+
+Time/status:
+
+12–13px
+uppercase where appropriate
+JetBrains Mono
+
+Example:
+
+DUE IN 15 MINS
+
+Use Noto Nastaliq Urdu for Urdu text.
+
+Make sure Urdu is properly RTL aligned.
+
+Do NOT force the entire notification row into RTL.
+
+Only Urdu strings should be RTL.
+
+==================================================
+8. URDU DATA
+==================================================
+
+Keep the actual customer/property context Pakistani.
+
+Examples:
+
+Ali Raza — سوا چار کروڑ
+
+Hamza Sheikh — ماڈل ٹاؤن (12 کروڑ)
+
+Ayesha Khan — کرایہ inquiry
+
+Use:
+
+Noto Nastaliq Urdu
+
+for Urdu strings.
+
+Keep customer names in the existing appropriate style.
+
+==================================================
+9. TIME / PRIORITY
+==================================================
+
+Use clear hierarchy.
+
+Example:
+
+DUE IN 15 MINS
+
+should be the most visually prominent metadata.
+
+Use subtle amber for urgent follow-ups.
+
+Other examples:
+
+TOMORROW · 10:00 AM
+
+4 HOURS AGO
+
+Do not use excessive colors.
+
+==================================================
+10. SEPARATORS
+==================================================
+
+Use extremely subtle separators between notifications.
+
+Example:
+
+────────────────────────────
+
+Opacity:
+very low.
+
+Avoid heavy borders around every item.
+
+==================================================
+11. SPACING
+==================================================
+
+Each notification:
+
+~90–110px height depending on content.
+
+Padding:
+
+16–18px.
+
+Gap between icon and content:
+
+12–14px.
+
+Header:
+
+20px padding.
+
+Keep everything aligned.
+
+The current panel feels vertically stretched.
+
+Make it more compact and information-dense.
+
+==================================================
+12. HOVER
+==================================================
+
+On hover:
+
+- slightly brighter surface
+- subtle background tint
+- 150–200ms transition
+
+No:
+
+- scale
+- glow
+- bounce
+- large movement
+
+==================================================
+13. READ STATE
+==================================================
+
+Unread:
+
+- subtle tinted background
+- status dot
+- stronger title
+
+Read:
+
+- neutral background
+- muted title
+- no unread dot
+
+Do NOT dramatically change the entire notification appearance.
+
+==================================================
+14. FOOTER
+==================================================
+
+If the existing implementation contains:
+
+"Dismiss all"
+
+keep it.
+
+Make it a subtle footer action.
+
+Example:
+
+Dismiss all
+
+Centered.
+
+Small typography.
+
+Secondary appearance.
+
+Add a subtle divider above it.
+
+==================================================
+15. RESPONSIVENESS
+==================================================
+
+Desktop:
+Floating dropdown aligned to notification bell.
+
+Tablet:
+Reduce width slightly.
+
+Mobile:
+Use almost full available width with safe margins.
+
+Do not allow horizontal overflow.
+
+Do not block important content unnecessarily.
+
+==================================================
+16. VISUAL CONSISTENCY
+==================================================
+
+Match the new Rehman Estates visual system:
+
+- liquid glass
+- soft white surface
+- subtle blue/lavender ambient light
+- restrained accent colors
+- clean typography
+- subtle shadows
+- premium spacing
+
+Do NOT introduce a completely different design language.
+
+==================================================
+17. IMPORTANT — FIX THE CURRENT PROBLEM
+==================================================
+
+The screenshot currently shows the underlying Leads page through the notification panel.
+
+This creates visual confusion.
+
+Fix this by making the notification surface sufficiently opaque.
+
+Target:
+
+The user should immediately understand:
+
+"This is a notification panel floating above the application."
+
+The content behind it should be visually secondary.
+
+==================================================
+18. DO NOT OVERDESIGN
+==================================================
+
+Avoid:
+
+❌ huge gradients
+❌ rainbow colors
+❌ glowing cards
+❌ excessive blur
+❌ giant icons
+❌ excessive rounded containers
+❌ oversized buttons
+❌ unnecessary animations
+
+Prefer:
+
+✓ hierarchy
+✓ spacing
+✓ typography
+✓ subtle glass
+✓ restrained color
+✓ clear status
+✓ excellent alignment
+
+==================================================
+19. FINAL TARGET
+
+The final notification panel should look like:
+
+Premium SaaS
++
+Real-estate CRM
++
+Liquid glass
++
+Excellent information hierarchy
+
+It should look credible enough that a real property company could use it every day.
+
+FINAL RULE:
+
+Make it feel DESIGNED, not GENERATED.
+
+The user should notice the notification information first, and the glass effect second.

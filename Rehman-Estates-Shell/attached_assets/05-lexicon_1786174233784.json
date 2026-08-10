@@ -1,0 +1,99 @@
+{
+  "_readme": "Reference data for Urdu property speech. The LLM handles most of this from the system prompt, but keep this file in src/data/ so tool handlers can normalize and so you can point at it during judging as evidence of domain work.",
+
+  "units": {
+    "marla": { "sqft": 225, "urdu": "مرلہ" },
+    "kanal": { "marla": 20, "sqft": 4500, "urdu": "کنال" },
+    "sqft":  { "urdu": "اسکوائر فٹ" }
+  },
+
+  "money": {
+    "hazaar": { "value": 1000, "urdu": "ہزار", "roman": ["hazaar", "hazar", "thousand"] },
+    "lakh":   { "value": 100000, "urdu": "لاکھ", "roman": ["lakh", "lac", "lakhs"] },
+    "crore":  { "value": 10000000, "urdu": "کروڑ", "roman": ["crore", "karor", "karore"] }
+  },
+
+  "modifiers": {
+    "sawa":  { "op": "add",      "value": 0.25, "urdu": "سوا",    "example": "sawa 5 marla = 5.25 marla" },
+    "paune": { "op": "subtract", "value": 0.25, "urdu": "پونے",   "example": "paune 2 crore = 17,500,000" },
+    "dedh":  { "op": "set",      "value": 1.5,  "urdu": "ڈیڑھ",   "example": "dedh crore = 15,000,000" },
+    "dhai":  { "op": "set",      "value": 2.5,  "urdu": "ڈھائی",  "example": "dhai crore = 25,000,000" },
+    "sarhe": { "op": "add",      "value": 0.5,  "urdu": "ساڑھے",  "example": "sarhe teen crore = 35,000,000" },
+    "adha":  { "op": "set",      "value": 0.5,  "urdu": "آدھا",   "example": "adha kanal = 10 marla" }
+  },
+
+  "numbers_urdu": {
+    "1": "ایک", "2": "دو", "3": "تین", "4": "چار", "5": "پانچ",
+    "6": "چھ", "7": "سات", "8": "آٹھ", "9": "نو", "10": "دس",
+    "11": "گیارہ", "12": "بارہ", "13": "تیرہ", "14": "چودہ", "15": "پندرہ",
+    "20": "بیس", "25": "پچیس", "30": "تیس", "35": "پینتیس", "40": "چالیس",
+    "45": "پینتالیس", "50": "پچاس", "55": "پچپن", "60": "ساٹھ", "65": "پینسٹھ",
+    "70": "ستر", "72": "بہتر", "75": "پچھتر", "80": "اسی", "85": "پچاسی",
+    "88": "اٹھاسی", "90": "نوے", "95": "پچانوے"
+  },
+
+  "tts_pronunciation": {
+    "_note": "Write these in Urdu script in agent output so the speech engine pronounces them correctly. Enforced in the system prompt; also available for Uplift's phrase-replacement API if you wire it up.",
+    "DHA": "ڈی ایچ اے",
+    "LDA": "ایل ڈی اے",
+    "NOC": "این او سی",
+    "EME": "ای ایم ای",
+    "NFC": "این ایف سی",
+    "PIA": "پی آئی اے",
+    "Bahria Town": "بحریہ ٹاؤن",
+    "Bahria Orchard": "بحریہ آرچرڈ",
+    "Gulberg": "گلبرگ",
+    "Johar Town": "جوہر ٹاؤن",
+    "Wapda Town": "واپڈا ٹاؤن",
+    "Model Town": "ماڈل ٹاؤن",
+    "Askari": "عسکری",
+    "Valencia Town": "ویلنشیا ٹاؤن",
+    "Lake City": "لیک سٹی",
+    "Park View City": "پارک ویو سٹی",
+    "Paragon City": "پیراگون سٹی",
+    "State Life": "سٹیٹ لائف",
+    "Allama Iqbal Town": "علامہ اقبال ٹاؤن",
+    "Etihad Town": "اتحاد ٹاؤن",
+    "Al Kabir Town": "الکبیر ٹاؤن",
+    "Central Park": "سنٹرل پارک",
+    "phase": "فیز",
+    "block": "بلاک",
+    "sector": "سیکٹر"
+  },
+
+  "property_terms": {
+    "plot":        { "urdu": "پلاٹ" },
+    "file":        { "urdu": "فائل", "meaning": "Allocation document, no land allotted yet. Traded as an investment. Cheaper than possession." },
+    "possession":  { "urdu": "پزیشن", "meaning": "Physical land allotted and available to build on today." },
+    "demand":      { "urdu": "ڈیمانڈ", "meaning": "The asking price." },
+    "bayana":      { "urdu": "بیعانہ", "meaning": "Token or earnest money paid to hold a deal." },
+    "corner":      { "urdu": "کارنر", "meaning": "Corner plot. Carries a price premium." },
+    "park_facing": { "urdu": "پارک فیسنگ" },
+    "boulevard":   { "urdu": "بلیوارڈ" },
+    "transfer":    { "urdu": "ٹرانسفر" },
+    "aqsat":       { "urdu": "اقساط", "meaning": "Instalments." },
+    "society":     { "urdu": "سوسائٹی" },
+    "kiraya":      { "urdu": "کرایہ", "meaning": "Rent." },
+    "sauda":       { "urdu": "سودا", "meaning": "The deal." },
+    "registry":    { "urdu": "رجسٹری", "meaning": "Title registration." },
+    "balloting":   { "urdu": "بیلٹنگ", "meaning": "Draw that assigns a plot number to a file." }
+  },
+
+  "intent_phrases": {
+    "buy":    ["chahiye", "lena hai", "kharidna hai", "چاہیے", "لینا ہے", "خریدنا ہے"],
+    "rent":   ["kiraye pe", "rent pe", "کرائے پر", "رینٹ پر"],
+    "sell":   ["bechna hai", "sale karna hai", "بیچنا ہے"],
+    "invest": ["investment", "file leni hai", "انویسٹمنٹ", "فائل لینی ہے"]
+  },
+
+  "test_utterances": {
+    "_note": "Say these out loud during the 15:30 tuning block.",
+    "1": "مجھے ڈی ایچ اے فیز سکس میں پانچ مرلہ کا پلاٹ چاہیے",
+    "2": "سوا پانچ مرلہ، بجٹ ڈیڑھ کروڑ تک",
+    "3": "Bahria Orchard mein 5 marla ka ghar chahiye, rent pe",
+    "4": "فائل اور پزیشن میں کیا فرق ہے؟",
+    "5": "demand kya hai iski?",
+    "6": "Johar Town mein 10 marla, budget paune 5 crore",
+    "7": "Model Town mein 3 marla chahiye"
+  }
+}

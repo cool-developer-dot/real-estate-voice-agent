@@ -1,0 +1,1062 @@
+MASTER UI REDESIGN — PREMIUM LIQUID GLASS SYSTEM
+REHMAN ESTATES
+
+You are a senior product designer and frontend engineer specializing in premium SaaS products, Apple-quality glass interfaces, high-end dashboard UX, visual hierarchy, motion design, and production-grade React applications.
+
+TASK:
+Transform the EXISTING Rehman Estates frontend into a highly polished, sophisticated Liquid Glass interface.
+
+THIS IS A VISUAL SYSTEM TRANSFORMATION.
+
+==================================================
+CRITICAL RULE #1 — DO NOT CHANGE THE COLOR SYSTEM
+==================================================
+
+ABSOLUTELY DO NOT introduce a new color palette.
+
+DO NOT add red.
+DO NOT add burgundy.
+DO NOT add purple.
+DO NOT add new accent colors.
+DO NOT replace existing colors.
+DO NOT recolor the application.
+
+The CURRENT color scheme is LOCKED.
+
+Preserve every existing:
+
+- primary color
+- secondary color
+- accent color
+- success color
+- warning color
+- error color
+- text colors
+- background colors
+- gradients
+- brand colors
+
+The goal is:
+
+EXISTING COLORS
++
+PREMIUM LIQUID GLASS
++
+DEPTH
++
+LIGHT
++
+MATERIAL
++
+SPACING
++
+MICRO-INTERACTIONS
+
+NOT:
+
+NEW COLORS.
+
+If a glass effect requires a color, derive it from the EXISTING design tokens.
+
+==================================================
+CRITICAL RULE #2 — DO NOT BREAK FUNCTIONALITY
+==================================================
+
+Before changing anything, inspect the existing application.
+
+Understand:
+
+- routes
+- components
+- state
+- data flow
+- voice integration
+- Uplift integration
+- RegistryCard
+- CallPanel
+- MatchList
+- Lead cards
+- Sidebar
+- Header
+- Notifications
+- Settings
+- responsive behavior
+
+DO NOT rewrite working business logic.
+
+DO NOT change:
+
+- APIs
+- Uplift integration
+- voice functionality
+- Tareeq
+- lead state
+- listing data
+- lexicon data
+- search logic
+- routing
+- authentication
+- existing interactions
+- data structures
+
+This task is primarily a VISUAL SYSTEM redesign.
+
+==================================================
+1. DESIGN PHILOSOPHY
+==================================================
+
+The final interface should feel like:
+
+PREMIUM SOFTWARE
++
+REAL MATERIAL
++
+LIQUID GLASS
++
+DEPTH
++
+LIGHT
++
+PRECISION
+
+The glass effect should feel:
+
+- physical
+- translucent
+- layered
+- soft
+- expensive
+- controlled
+- intentional
+
+It must NOT feel like:
+
+- generic glassmorphism
+- a CSS demo
+- a Dribbble concept
+- excessive blur
+- translucent boxes everywhere
+- floating random cards
+- AI-generated UI
+
+The goal is a REAL PRODUCT.
+
+==================================================
+2. THE MOST IMPORTANT PRINCIPLE
+==================================================
+
+DO NOT MAKE EVERYTHING GLASS.
+
+This is critical.
+
+Create a hierarchy of materials.
+
+Use approximately:
+
+LEVEL 0
+Background
+
+LEVEL 1
+Primary application surfaces
+
+LEVEL 2
+Glass cards
+
+LEVEL 3
+Floating controls
+
+LEVEL 4
+Dropdowns / modals / overlays
+
+LEVEL 5
+Focused / active elements
+
+Not every element should have the same blur, opacity, border, and shadow.
+
+Different depth = different material treatment.
+
+==================================================
+3. BACKGROUND
+==================================================
+
+Keep the EXISTING background colors.
+
+Improve only the atmospheric depth.
+
+Use existing gradients where already present.
+
+If additional atmospheric lighting is needed:
+
+- derive it from existing colors
+- keep opacity extremely low
+- keep it static or extremely slow
+- never overpower content
+
+The background should create enough visual contrast for the glass surfaces to be visible.
+
+Do not add giant colorful blobs.
+
+Do not add excessive animated gradients.
+
+==================================================
+4. GLASS MATERIAL
+==================================================
+
+Create a reusable glass surface system.
+
+Conceptually:
+
+.glass-surface
+
+should combine:
+
+- translucent background
+- backdrop blur
+- subtle saturation
+- fine border
+- soft shadow
+- optional inner highlight
+
+Example direction:
+
+background:
+rgba(255,255,255,0.55–0.80)
+
+backdrop-filter:
+blur(20px–32px) saturate(110%–125%)
+
+border:
+1px solid rgba(255,255,255,0.45–0.70)
+
+shadow:
+large, soft, low-opacity
+
+IMPORTANT:
+
+Do not blindly use these exact values everywhere.
+
+Tune them against the EXISTING color scheme.
+
+The surface must remain readable.
+
+==================================================
+5. GLASS DEPTH
+==================================================
+
+Create at least three glass depths.
+
+LIGHT GLASS:
+
+For:
+- cards
+- panels
+- secondary surfaces
+
+MEDIUM GLASS:
+
+For:
+- header
+- sidebar
+- major dashboard containers
+
+STRONG GLASS:
+
+For:
+- dropdowns
+- notifications
+- popovers
+- modals
+
+Strong glass must have enough opacity that content underneath does not become confusing.
+
+==================================================
+6. BORDERS
+==================================================
+
+Replace heavy borders with subtle material edges.
+
+Use:
+
+- very thin 1px borders
+- low-opacity white/highlight borders
+- subtle existing-color edge when appropriate
+
+Add an extremely subtle top/outer highlight.
+
+The border should communicate:
+
+"glass edge"
+
+not:
+
+"card outline."
+
+Avoid dark thick borders.
+
+==================================================
+7. SHADOW SYSTEM
+==================================================
+
+Create a sophisticated shadow hierarchy.
+
+Avoid:
+
+- harsh black shadows
+- huge floating shadows
+- cartoon-like depth
+
+Use:
+
+large blur
+low opacity
+soft spread
+
+Example conceptual hierarchy:
+
+Small:
+0 4px 16px rgba(...)
+
+Medium:
+0 10px 30px rgba(...)
+
+Large:
+0 20px 50px rgba(...)
+
+Adapt opacity to the existing theme.
+
+The shadow should create physical separation from the background.
+
+==================================================
+8. INNER LIGHT
+==================================================
+
+Add a subtle inner highlight to important glass surfaces.
+
+For example:
+
+inset 0 1px 0 rgba(255,255,255,0.30)
+
+Keep it extremely subtle.
+
+This should make the surface feel like polished glass.
+
+Do not make it visibly shiny.
+
+==================================================
+9. BORDER RADIUS
+==================================================
+
+Do not make every element excessively rounded.
+
+Use a consistent radius hierarchy.
+
+Large panels:
+18–24px
+
+Cards:
+14–18px
+
+Inputs:
+10–14px
+
+Buttons:
+10–12px
+
+Small pills:
+8–10px
+
+Do not turn every component into a giant pill.
+
+==================================================
+10. SIDEBAR
+==================================================
+
+Transform the existing sidebar into a premium glass navigation surface.
+
+Keep:
+
+- current navigation
+- current labels
+- current icons
+- current colors
+- current active state logic
+
+Improve:
+
+- material
+- depth
+- spacing
+- border
+- shadow
+- active-state glass
+
+The sidebar should feel like a separate floating layer.
+
+Active navigation:
+
+- subtle translucent surface
+- existing accent color
+- slight inner highlight
+- minimal elevation
+
+Do NOT introduce any new color.
+
+==================================================
+11. TOP HEADER
+==================================================
+
+Turn the existing header into a floating glass layer.
+
+Keep all current functionality.
+
+Improve:
+
+- transparency
+- blur
+- border
+- depth
+- spacing
+
+Search field should feel like:
+
+glass inside glass
+
+but only subtly.
+
+Avoid nested glass overload.
+
+==================================================
+12. DASHBOARD CARDS
+==================================================
+
+Transform metric cards into premium glass objects.
+
+Preserve:
+
+- current colors
+- current numbers
+- current icons
+- current labels
+- current data
+
+Improve:
+
+- surface depth
+- typography hierarchy
+- spacing
+- border
+- shadow
+- hover behavior
+
+Do NOT add decorative gradients just for visual effect.
+
+The number should remain the visual focus.
+
+==================================================
+13. LEAD CARDS
+==================================================
+
+Keep the recently refined professional lead-card structure.
+
+Do not return to oversized colorful cards.
+
+Make them:
+
+- compact
+- structured
+- premium
+- data-dense
+
+Apply glass only to the surface.
+
+Keep status colors exactly as currently defined.
+
+Use existing semantic colors.
+
+==================================================
+14. LIVE CALL — PRIMARY EXPERIENCE
+==================================================
+
+This should be the most visually impressive screen.
+
+Do not add unnecessary futuristic effects.
+
+Create a sophisticated layered glass workspace:
+
+VOICE PANEL
++
+TRANSCRIPT
++
+REGISTRY
++
+MATCHES
+
+The voice area should feel alive through:
+
+- subtle waveform
+- soft glow derived from EXISTING colors
+- state transition
+- restrained motion
+
+States:
+
+LISTENING
+THINKING
+SPEAKING
+
+The animation should communicate state without distracting the user.
+
+==================================================
+15. REGISTRY CARD
+==================================================
+
+Preserve the RegistryCard concept.
+
+Make it look like a premium transparent property document.
+
+Maintain:
+
+- all fields
+- existing data
+- Urdu values
+- stamp animation
+- checkmarks
+- original customer phrases
+
+Improve:
+
+- glass surface
+- document depth
+- typography
+- separators
+- field spacing
+- subtle edge highlights
+
+When a field appears:
+
+existing stamp animation
++
+very subtle glass/light response
+
+Do NOT redesign the interaction logic.
+
+==================================================
+16. MATCH LIST
+==================================================
+
+Make property cards feel like premium digital property records.
+
+Preserve:
+
+- listing data
+- property ID
+- price
+- size
+- location
+- features
+- availability
+
+Use glass surfaces with restrained depth.
+
+A matching property may receive a subtle existing-accent highlight.
+
+Do not create a new color.
+
+==================================================
+17. NOTIFICATIONS
+==================================================
+
+Use stronger glass for notification dropdowns.
+
+Important:
+
+The page underneath must NOT remain overly visible.
+
+Notification panel should have:
+
+- stronger opacity
+- stronger blur
+- clear shadow
+- clean separation
+- excellent readability
+
+Unread state should continue using the existing color system.
+
+==================================================
+18. SETTINGS
+==================================================
+
+Use glass panels for settings sections.
+
+Inputs should feel:
+
+physical
+soft
+precise
+
+Focus state must preserve the current accent color.
+
+Do not introduce new colors.
+
+==================================================
+19. BUTTONS
+==================================================
+
+Do NOT turn every button into glass.
+
+Use three levels:
+
+Primary:
+existing primary styling
+
+Secondary:
+subtle glass
+
+Tertiary:
+minimal / text-based
+
+Primary actions should remain visually obvious.
+
+Glass should not destroy hierarchy.
+
+==================================================
+20. INPUTS
+==================================================
+
+Inputs should have:
+
+- subtle translucent background
+- thin border
+- strong readable text
+- clear placeholder
+- existing focus color
+- subtle focus ring
+
+Avoid overly transparent inputs.
+
+Text must remain clearly readable.
+
+==================================================
+21. MICRO-INTERACTIONS
+==================================================
+
+Add premium micro-interactions.
+
+Use:
+
+150–250ms:
+buttons
+hover
+focus
+
+200–350ms:
+cards
+dropdowns
+panels
+
+400–700ms:
+major surface transitions
+
+Use:
+
+ease-out
+cubic-bezier
+
+Avoid:
+
+- bouncing
+- excessive scaling
+- constant movement
+- spinning everything
+- dramatic parallax
+
+==================================================
+22. HOVER BEHAVIOR
+==================================================
+
+Cards:
+
+translateY(-2px)
+
+very subtle shadow increase
+
+slightly stronger border
+
+Buttons:
+
+slightly brighter surface
+
+Icons:
+
+small opacity/contrast transition
+
+No exaggerated scaling.
+
+==================================================
+23. GLASS REFLECTION
+==================================================
+
+For major glass panels only, consider an extremely subtle reflection.
+
+Example:
+
+linear-gradient(
+  120deg,
+  rgba(255,255,255,0.10),
+  transparent 35%
+)
+
+IMPORTANT:
+
+Use this sparingly.
+
+Do not make every card shiny.
+
+==================================================
+24. TEXT READABILITY — ABSOLUTE PRIORITY
+==================================================
+
+This is NON-NEGOTIABLE.
+
+Glass must NEVER reduce readability.
+
+Every:
+
+heading
+label
+number
+price
+name
+phone
+Urdu text
+button
+status
+navigation item
+
+must remain immediately readable.
+
+If transparency makes text difficult to read:
+
+INCREASE SURFACE OPACITY.
+
+Do not sacrifice readability for glass.
+
+==================================================
+25. URDU
+==================================================
+
+Preserve the current Urdu implementation.
+
+Noto Nastaliq Urdu remains for Urdu content.
+
+Preserve:
+
+direction: rtl
+
+text-align: right
+
+Ensure the glass background provides sufficient contrast behind Urdu.
+
+Do not blur or reduce opacity behind transcript text.
+
+==================================================
+26. ACCESSIBILITY
+==================================================
+
+Maintain:
+
+- keyboard navigation
+- visible focus
+- accessible buttons
+- readable contrast
+- semantic HTML
+- screen-reader labels
+
+Glass effects must never interfere with accessibility.
+
+==================================================
+27. RESPONSIVENESS
+==================================================
+
+The liquid glass system must work at:
+
+1440px
+1280px
+1024px
+768px
+390px
+
+Desktop:
+
+layered glass workspace
+
+Tablet:
+
+simplified layering
+
+Mobile:
+
+stacked surfaces
+
+Avoid:
+
+- horizontal overflow
+- clipped text
+- oversized glass panels
+- excessive blur
+- unreadable nested surfaces
+
+==================================================
+28. MOBILE PERFORMANCE
+==================================================
+
+Very important.
+
+On mobile or lower-powered devices:
+
+reduce:
+
+- blur intensity
+- shadow complexity
+- animated gradients
+- continuous effects
+
+Use CSS media queries where appropriate.
+
+The interface must remain smooth.
+
+==================================================
+29. PERFORMANCE
+==================================================
+
+Do not introduce a heavy UI library just for glass effects.
+
+Prefer:
+
+CSS
+backdrop-filter
+gradients
+box-shadow
+transforms
+opacity
+
+Avoid unnecessary:
+
+WebGL
+canvas
+heavy animation packages
+continuous JavaScript animations
+
+Use GPU-friendly properties:
+
+transform
+opacity
+
+==================================================
+30. DESIGN TOKENS
+==================================================
+
+Before styling individual components, establish a centralized design-token layer.
+
+Create reusable variables for:
+
+glass-light
+glass-medium
+glass-strong
+glass-border
+glass-shadow
+glass-radius
+surface
+surface-hover
+focus-ring
+transition-fast
+transition-medium
+
+DO NOT create new color tokens.
+
+Reference the existing color system.
+
+==================================================
+31. CONSISTENCY
+==================================================
+
+Every major component must feel like it belongs to the SAME physical material system.
+
+Sidebar
+Header
+Dashboard
+Cards
+Leads
+Live Call
+Registry
+Matches
+Notifications
+Settings
+Dropdowns
+
+They should share:
+
+- border language
+- shadow language
+- blur language
+- radius language
+- spacing language
+- interaction language
+
+But they should NOT all look identical.
+
+==================================================
+32. AVOID THE "AI GENERATED" LOOK
+==================================================
+
+This is extremely important.
+
+Do NOT:
+
+- add random glowing blobs
+- add excessive gradients
+- make every card float
+- use huge rounded containers
+- use excessive purple/cyan glow
+- make everything translucent
+- add decorative circles everywhere
+- use random futuristic lines
+- add unnecessary 3D elements
+
+Professional design comes from:
+
+TYPOGRAPHY
++
+SPACING
++
+HIERARCHY
++
+MATERIAL
++
+LIGHT
++
+CONSISTENCY
+
+Not decoration.
+
+==================================================
+33. VISUAL HIERARCHY
+==================================================
+
+Follow this priority:
+
+1. INFORMATION
+2. TYPOGRAPHY
+3. SPACING
+4. COMPONENT HIERARCHY
+5. GLASS MATERIAL
+6. DEPTH
+7. MICRO-INTERACTION
+
+Never reverse this.
+
+==================================================
+34. FINAL VISUAL TARGET
+==================================================
+
+The finished product should feel like:
+
+A premium property intelligence platform built by a senior design team.
+
+Imagine:
+
+clean modern SaaS
++
+high-end glass material
++
+real estate operations
++
+AI voice workspace
+
+The user should feel:
+
+"This is a real product."
+
+NOT:
+
+"This is a glassmorphism demo."
+
+==================================================
+35. FINAL QA
+==================================================
+
+After implementation:
+
+1. Run the complete application.
+2. Visit every route.
+3. Test Dashboard.
+4. Test Leads.
+5. Test Live Call.
+6. Test RegistryCard.
+7. Test MatchList.
+8. Test Notifications.
+9. Test Settings.
+10. Test sidebar.
+11. Test all dropdowns.
+12. Test hover states.
+13. Test keyboard focus.
+14. Test Urdu.
+15. Test 1440px.
+16. Test 1280px.
+17. Test 1024px.
+18. Test 768px.
+19. Test 390px.
+20. Check horizontal overflow.
+21. Check browser console.
+22. Check performance.
+23. Check text contrast.
+24. Check that NO existing colors were changed.
+
+==================================================
+FINAL NON-NEGOTIABLE REQUIREMENTS
+==================================================
+
+DO NOT CHANGE THE COLOR SCHEME.
+
+DO NOT ADD RED.
+
+DO NOT REMOVE EXISTING BRAND COLORS.
+
+DO NOT CHANGE BUSINESS LOGIC.
+
+DO NOT CHANGE DATA.
+
+DO NOT BREAK VOICE.
+
+DO NOT BREAK ROUTES.
+
+DO NOT BREAK RESPONSIVENESS.
+
+DO NOT sacrifice readability.
+
+DO NOT make every component glass.
+
+DO NOT over-animate.
+
+The goal is:
+
+EXISTING REHMAN ESTATES IDENTITY
++
+SAME COLORS
++
+NEW PREMIUM LIQUID GLASS MATERIAL SYSTEM
++
+BETTER DEPTH
++
+BETTER SPACING
++
+BETTER HIERARCHY
++
+SUBTLE MOTION
++
+PRODUCTION-GRADE POLISH
+
+Inspect the existing codebase first.
+Then implement the design system.
+Then progressively apply it to the existing components.
+Finally test the complete application and report exactly what was changed.

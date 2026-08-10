@@ -1,0 +1,402 @@
+:root {
+  --paper: #F5F6F4;
+  --card: #FFFFFF;
+  --ink: #14181C;
+  --ink-2: #5B6670;
+  --ink-3: #9AA3A9;
+  --rule: #DCE0DD;
+  --survey: #0E6B4F;
+  --survey-8: #0E6B4F14;
+  --stamp: #B0342C;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --sp: 8px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  margin: 0;
+  font-family: 'Archivo', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Page shell ---------- */
+
+.shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.col-left {
+  order: 1;
+}
+
+.col-right {
+  order: 2;
+}
+
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+  /* Registry card first when stacked */
+  .col-right {
+    order: 1;
+  }
+  .col-left {
+    order: 2;
+  }
+}
+
+/* ---------- Header bar ---------- */
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.header-brand {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}
+
+.header-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--rule);
+}
+
+.header-sub {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+}
+
+.header-desk {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+
+.header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--stamp);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .live-dot {
+    animation: livepulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes livepulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.live-word {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+/* Transcript divider row shown after a language-desk switch. */
+.desk-divider {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-3);
+  text-align: center;
+  padding: 6px 0;
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-md);
+  padding: 16px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--rule);
+  margin: 16px 0;
+  border: 0;
+}
+
+/* ---------- Buttons & focus ---------- */
+
+button {
+  background: var(--survey);
+  color: #fff;
+  border: 0;
+  border-radius: var(--r-sm);
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--survey);
+  outline-offset: 2px;
+}
+
+/* ---------- Call panel ---------- */
+
+.viz-box {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viz-box .lk-audio-bar,
+.viz-box [data-lk-highlighted] {
+  background: var(--survey);
+}
+
+.agent-state {
+  text-align: center;
+  color: var(--ink-2);
+  font-size: 13px;
+  text-transform: lowercase;
+  margin: 8px 0 0;
+}
+
+.transcript {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.turn {
+  margin-bottom: 12px;
+}
+
+.turn-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  margin-bottom: 2px;
+}
+
+.turn-text {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  direction: ltr;
+  text-align: left;
+}
+
+.turn-text.urdu {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 2.4;
+  font-size: 17px;
+}
+
+/* ---------- Registry card ---------- */
+
+.registry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.registry-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+
+.registry-ref {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.field-row {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 50%, transparent);
+}
+
+.field-row:last-of-type {
+  border-bottom: 0;
+}
+
+.field-label {
+  font-family: 'Archivo', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.field-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-value.empty {
+  color: var(--ink-3);
+}
+
+.field-check {
+  color: var(--survey);
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .field-value.stamped {
+    animation: stamp 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+@keyframes stamp {
+  0% { transform: scale(1.06); opacity: 0; }
+  60% { transform: scale(0.99); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* ---------- Matches ---------- */
+
+.section-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  margin: 0 0 8px;
+}
+
+.match-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.match-main {
+  font-size: 13px;
+}
+
+.match-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: var(--survey-8);
+  color: var(--survey);
+  border-radius: var(--r-sm);
+  padding: 2px 6px;
+}
+
+.match-price {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+.matches-empty {
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.visit-row {
+  color: var(--survey);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.handoff-banner {
+  background: var(--card);
+  border-left: 3px solid var(--stamp);
+  color: var(--stamp);
+  font-size: 13px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+/* ---------- Status rail ---------- */
+
+.status-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.reconnecting {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-2);
+}
+
+.btn-quiet {
+  background: transparent;
+  color: var(--ink-2);
+  border: 1px solid var(--rule);
+}
+
+/* ---------- Misc ---------- */
+
+.error-text {
+  font-size: 13px;
+}
+
+.error-body {
+  white-space: pre-wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}

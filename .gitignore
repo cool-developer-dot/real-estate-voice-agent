@@ -1,0 +1,19 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.DS_Store
+**/.DS_Store
+!.env.example
+!**/.env.example
+*.log
+.cache/
+.local/
+coverage/
+tmp/
+out-tsc/
+*.tsbuildinfo
+
+# Runtime demo data (recreated automatically)
+Rehman-Estates-Shell/artifacts/api-server/data/persisted-store.json
+config.bat

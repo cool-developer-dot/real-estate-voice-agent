@@ -1,0 +1,591 @@
+REDESIGN THE REHMAN ESTATES FRONTEND — PREMIUM AI GLASSMORPHIC EXPERIENCE
+
+You are a senior product designer + frontend engineer specializing in premium SaaS, AI interfaces, glassmorphism, motion design, and production-quality React/TypeScript applications.
+
+IMPORTANT:
+This is a VISUAL REDESIGN ONLY.
+
+DO NOT change:
+- business logic
+- voice integration
+- Uplift integration
+- Tareeq agent behavior
+- listing data
+- lexicon data
+- search/matching logic
+- RegistryCard data structure
+- lead state
+- routes
+- functionality
+- API contracts
+
+Do not remove existing working features.
+
+Use the attached visual reference as the design inspiration, but DO NOT copy it literally.
+
+==================================================
+1. DESIGN OBJECTIVE
+==================================================
+
+Transform the current Rehman Estates UI into a world-class:
+
+- AI workspace
+- premium SaaS dashboard
+- light glassmorphic interface
+- atmospheric gradient environment
+- modern Pakistani real-estate product
+
+The result should feel like a polished product from a top-tier AI startup.
+
+It must NOT look like:
+- a generic admin dashboard
+- a generic chatbot
+- a template
+- an old CRM
+- excessive neumorphism
+- excessive glass blur
+- a children's colorful UI
+
+The visual language should be:
+
+Premium
+Elegant
+Modern
+Minimal
+Intelligent
+Trustworthy
+Real-estate focused
+AI-native
+
+==================================================
+2. OVERALL VISUAL SYSTEM
+==================================================
+
+Move away from the current heavy dark dashboard.
+
+Use a sophisticated LIGHT interface inspired by the supplied reference.
+
+Background:
+
+- very light neutral base
+- subtle blue/lavender atmospheric gradient
+- extremely subtle cyan/purple/pink/orange glow zones
+- large blurred radial gradients
+- never use harsh saturated backgrounds
+- gradients must feel soft and expensive
+
+Example visual atmosphere:
+
+top-left:
+soft cyan/blue glow
+
+top-right:
+soft lavender/pink glow
+
+bottom:
+very subtle warm/cyan atmospheric glow
+
+Keep the center mostly readable and calm.
+
+Do NOT make the entire page rainbow-colored.
+
+==================================================
+3. GLASSMORPHISM
+==================================================
+
+Create a refined glass system.
+
+Cards should use:
+
+- translucent white surfaces
+- backdrop-filter blur
+- subtle border
+- extremely soft shadow
+- slight background transparency
+- subtle inner highlight
+- rounded corners
+
+Example conceptual styling:
+
+background:
+rgba(255,255,255,0.55)
+
+border:
+rgba(255,255,255,0.65)
+
+backdrop-filter:
+blur(20px)
+
+shadow:
+very soft and diffused
+
+Do not overuse blur.
+
+Glass must improve hierarchy rather than make text difficult to read.
+
+==================================================
+4. TYPOGRAPHY
+==================================================
+
+Keep typography extremely clean.
+
+Use a modern professional sans-serif for:
+
+- navigation
+- headings
+- buttons
+- metrics
+- labels
+- English UI
+
+Keep Noto Nastaliq Urdu for actual Urdu content.
+
+Urdu must remain:
+
+- RTL
+- highly readable
+- properly spaced
+- comfortable line-height
+
+Do NOT apply Nastaliq to English UI labels.
+
+==================================================
+5. SIDEBAR
+==================================================
+
+Redesign the sidebar into a premium translucent glass navigation rail.
+
+Keep existing navigation:
+
+Dashboard
+Leads
+Live Call
+Settings
+
+Do not invent unnecessary navigation.
+
+Sidebar:
+
+- translucent white/glass
+- subtle border
+- soft shadow
+- elegant active state
+- minimal icons
+- excellent spacing
+
+Active item should have a subtle gradient/glow treatment rather than a heavy solid block.
+
+Keep text highly readable.
+
+==================================================
+6. HEADER
+==================================================
+
+Create a clean floating glass header.
+
+Include:
+
+- Rehman Estates branding
+- search
+- notifications
+- profile/status
+
+Use generous spacing.
+
+Header should feel like a floating layer above the atmospheric background.
+
+Avoid visual clutter.
+
+==================================================
+7. DASHBOARD HERO
+==================================================
+
+Create a premium AI-focused hero area.
+
+Heading:
+
+AI Property Front Desk
+
+Supporting text:
+
+Your intelligent Urdu-speaking property assistant.
+
+Show Tareeq as the AI identity.
+
+Add a subtle animated AI orb / voice visualization.
+
+IMPORTANT:
+
+Do not create an unnecessary complex 3D system.
+
+Use lightweight CSS/SVG animation where possible.
+
+The animation should remain smooth on low-end hardware.
+
+==================================================
+8. METRIC CARDS
+==================================================
+
+Redesign existing dashboard metrics as premium glass cards.
+
+Keep existing metrics/functionality.
+
+Examples:
+
+ACTIVE CALLS
+01
+
+LEADS CAPTURED
+14
+
+FOLLOW-UPS
+08
+
+MATCHES
+03
+
+Use:
+
+- subtle gradient glow
+- small icon
+- large number
+- secondary label
+- tiny trend indicator where already available
+
+Do NOT exaggerate the colors.
+
+Each card should have a slightly different atmospheric glow:
+
+blue
+purple
+cyan
+warm accent
+
+Very subtle.
+
+==================================================
+9. LIVE CALL PANEL
+==================================================
+
+This is one of the most important areas.
+
+Make the live call experience feel like an AI product.
+
+Show:
+
+TAREEQ
+
+● LIVE
+
+Listening
+Thinking
+Speaking
+
+Use a beautiful animated voice waveform/orb.
+
+The waveform should react visually to the current state.
+
+Do not fake excessive audio visualization.
+
+Keep animation smooth and lightweight.
+
+==================================================
+10. URDU TRANSCRIPT
+==================================================
+
+Make the Urdu transcript a premium glass conversation surface.
+
+Example:
+
+Tareeq:
+
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔
+
+Caller:
+
+مجھے ڈی ایچ اے فیز سکس میں پانچ مرلہ
+کا پلاٹ چاہیے۔
+
+Use:
+
+Noto Nastaliq Urdu
+RTL
+proper line-height
+excellent contrast
+
+Clearly distinguish:
+
+AI
+CALLER
+
+but keep the overall visual language elegant.
+
+==================================================
+11. REGISTRY CARD
+==================================================
+
+DO NOT remove the existing Registry Card concept.
+
+Instead, make it a beautiful glass "Property Lead Record".
+
+It remains the central data extraction component.
+
+Example:
+
+PROPERTY LEAD RECORD
+
+INTENT
+خرید ✓
+
+TYPE
+پلاٹ ✓
+
+SIZE
+5.25 مرلہ ✓
+"سوا پانچ مرلہ"
+
+SOCIETY
+DHA Lahore ✓
+
+PHASE
+Phase 6 ✓
+
+BUDGET
+2 کروڑ 25 لاکھ ✓
+"سوا دو کروڑ"
+
+FEATURES
+کارنر ✓
+
+TIMELINE
+—
+
+NAME
+—
+
+PHONE
+—
+
+Keep the existing stamp animation.
+
+Improve it visually with:
+
+- subtle glow on newly extracted values
+- glass surface
+- clean dividers
+- green confirmation indicator
+- elegant micro-animation
+
+Do NOT make it flashy.
+
+==================================================
+12. PROPERTY MATCHES
+==================================================
+
+Make MatchList feel like premium real-estate inventory.
+
+Each listing should be a glass card.
+
+Example:
+
+RE-001
+
+DHA Lahore
+Phase 6
+
+5 مرلہ · کارنر
+
+دو کروڑ پانچ لاکھ
+
+Corner plot · 40ft road
+Ready for construction
+
+Use subtle hover elevation.
+
+If a property matches the user's requirements, visually emphasize the match with a tasteful glow/border.
+
+==================================================
+13. GRADIENT SYSTEM
+==================================================
+
+Create a reusable gradient system.
+
+Use soft:
+
+- cyan
+- blue
+- violet
+- pink
+- warm orange
+
+But keep opacity low.
+
+Gradients should appear mainly in:
+
+- background atmosphere
+- metric card glows
+- AI orb
+- active states
+- subtle hover states
+
+Do NOT put gradients behind every text element.
+
+==================================================
+14. MICRO-INTERACTIONS
+==================================================
+
+Add professional micro-interactions:
+
+- cards gently lift on hover
+- buttons have subtle hover transitions
+- navigation active state transitions
+- registry values stamp in
+- AI state transitions smoothly
+- property cards reveal subtly
+- search focus has a soft glow
+
+Animation timing:
+
+150–300ms for UI interactions.
+
+Avoid excessive animation.
+
+Respect:
+
+prefers-reduced-motion
+
+==================================================
+15. RESPONSIVENESS
+==================================================
+
+Must remain excellent at:
+
+1280px+
+1024px
+768px
+390px
+
+Desktop:
+sidebar + main workspace
+
+Tablet:
+compressed sidebar/navigation
+
+Mobile:
+stack sections vertically
+
+The Live Call + Registry Card must remain usable on mobile.
+
+Never allow text clipping.
+
+Never allow horizontal overflow.
+
+==================================================
+16. ACCESSIBILITY
+==================================================
+
+Maintain:
+
+- strong text contrast
+- visible focus states
+- keyboard navigation
+- readable Urdu
+- accessible buttons
+- proper semantic structure
+
+Glass effects must NEVER reduce readability.
+
+==================================================
+17. PERFORMANCE
+==================================================
+
+Very important.
+
+This is a hackathon demo and must run smoothly.
+
+Avoid:
+
+- heavy WebGL
+- unnecessary 3D libraries
+- huge animation libraries
+- expensive continuous blur effects
+- excessive DOM animations
+
+Prefer:
+
+CSS gradients
+CSS blur
+CSS transitions
+SVG
+lightweight React state
+
+Optimize animations for low-end devices.
+
+==================================================
+18. BRANDING
+==================================================
+
+Keep:
+
+REHMAN ESTATES
+
+Do not turn the product into a generic "AI Assistant" template.
+
+The product identity should always communicate:
+
+PROPERTY + AI + VOICE + PAKISTAN
+
+==================================================
+19. DATA
+==================================================
+
+Keep the existing real property dataset.
+
+Do not replace:
+
+listings.json
+lexicon.json
+
+Do not change internal data structures unless absolutely required for visual rendering.
+
+Do not introduce fake American data.
+
+Use Pakistani context throughout visible mock/demo data.
+
+==================================================
+20. FINAL QUALITY BAR
+==================================================
+
+Before finishing:
+
+1. Run the application.
+2. Inspect every route.
+3. Check Dashboard.
+4. Check Leads.
+5. Check Live Call.
+6. Check Settings.
+7. Test 390px.
+8. Test desktop.
+9. Check Urdu rendering.
+10. Check registry animation.
+11. Check property matching.
+12. Check console for errors.
+
+Do not claim completion until the application actually runs.
+
+FINAL GOAL:
+
+The finished interface should feel like:
+
+"Apple-level cleanliness + modern AI SaaS + premium glassmorphism + Pakistani real estate + Urdu voice intelligence."
+
+It should immediately communicate:
+
+A customer speaks Urdu.
+Tareeq understands them.
+Their requirements become structured property data.
+The system finds the right property.
+Everything happens beautifully in real time.
+
+Do not modify working functionality.
+This task is primarily a visual/design transformation.

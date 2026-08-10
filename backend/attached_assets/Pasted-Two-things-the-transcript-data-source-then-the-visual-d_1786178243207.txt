@@ -1,0 +1,75 @@
+Two things: the transcript data source, then the visual design.
+
+## PART 1 — Transcript (do this first, it is the risky half)
+
+I need Tariq's turns and the caller's turns rendered live. The SDK re-exports
+LiveKit, and LiveKit has changed its transcription API across versions, so
+PROBE before you commit. In this order:
+
+  A. Try `useTranscriptions()` from '@livekit/components-react'.
+  B. If that export does not exist, subscribe to the room's text stream on topic
+     'lk.transcription' via room.registerTextStreamHandler.
+  C. If neither yields data, fall back to
+     room.on(RoomEvent.TranscriptionReceived, handler).
+
+Write a tiny diagnostic first that tries all three, logs which one produces
+segments, and logs one sample segment object so we can see its real shape.
+Show me that output, then build the transcript on whichever worked. Do not
+build the UI on an assumed shape.
+
+Store transcript as an array of { id, role: 'agent'|'caller', text, final }.
+De-duplicate on segment id — interim segments must UPDATE the existing entry,
+not append a new one. Cap the array at the last 50 turns.
+
+## PART 2 — Visual design
+
+Concept: a land-registry document that fills itself in while someone talks.
+Explicitly avoid the default AI look: no cream background, no serif display
+face, no terracotta accent, no gradients, no drop shadows, no glassmorphism.
+
+Layout: two columns, left 55% / right 45%, gap 24px, max-width 1240px, centred,
+padding 24px. Below 900px stack to one column with the registry card FIRST.
+
+Header bar: "REHMAN ESTATES" in Archivo 700 13px letter-spacing .14em, a 1px
+--rule vertical divider, then "FRONT DESK" in --ink-2. On the right, only while
+connected: a 7px --stamp dot with a 2s pulse plus the word LIVE. Then End call.
+--stamp red is used for the live dot and NOTHING else — not errors, not badges.
+
+LEFT (CallPanel): white card, 1px --rule border, --r-md radius, no shadow.
+BarVisualizer centred, bars in --survey. Below it the agent state as one
+lowercase word in --ink-2. A --rule divider, then the transcript.
+Transcript turns: a small mono label TARIQ or CALLER in --ink-3 10px uppercase,
+then the text. Urdu text gets class "urdu":
+  font-family 'Noto Nastaliq Urdu', serif; direction: rtl; text-align: right;
+  line-height: 2.4; font-size: 17px;
+Detect Urdu by testing the string against /[؀-ۿ]/. Latin text stays
+Archivo, ltr, left. Auto-scroll to the newest turn, but do not steal focus.
+
+RIGHT (RegistryCard): white card, same border. Header row "LEAD RECORD" in
+Archivo 700 12px letter-spacing .14em, and a mono reference like "#0142" in
+--ink-3 on the right. 1px --rule divider.
+Field rows exactly 36px tall so nothing shifts when they fill. Label left,
+value right in JetBrains Mono 14px, em-dash in --ink-3 when empty, and a small
+--survey check to the right of filled values. Rows separated by 1px --rule at
+50% opacity.
+
+Signature animation — drive it off the justFilled Set:
+  @keyframes stamp { 0% { transform: scale(1.06); opacity: 0 }
+                     60% { transform: scale(.99); opacity: 1 }
+                     100% { transform: scale(1) } }
+  220ms cubic-bezier(.2,.8,.2,1), wrapped in
+  @media (prefers-reduced-motion: no-preference).
+
+Below the fields: divider, "MATCHES" header, then MatchList — each match one
+compact row: size + block left, one feature chip, priceLabel right in JetBrains
+Mono. Empty state, quiet: "No matches yet — keep talking."
+Under MATCHES, confirmed visits render as a --survey row with the reference.
+If handoff is set, a banner at the TOP of the registry card: white background,
+3px --stamp left border, --stamp text, "Handoff requested — <reason>".
+
+Every interactive element gets a visible focus ring: outline 2px solid --survey,
+offset 2px. Buttons: --survey background, white text, --r-sm radius, Archivo 600
+13px, no gradient, no shadow.
+
+VERIFY: check at 1280px and at 390px. No horizontal scrollbar at 390px. No
+layout shift when a field fills. Console clean.

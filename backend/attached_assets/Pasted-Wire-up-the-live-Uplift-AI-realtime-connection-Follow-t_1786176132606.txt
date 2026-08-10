@@ -1,0 +1,52 @@
+Wire up the live Uplift AI realtime connection. Follow the contracts in
+replit.md exactly — do not invent endpoints, prop names or hook names.
+
+App.jsx:
+1. Read the assistant id from import.meta.env.VITE_ASSISTANT_ID. If it is
+   missing, render a clear message saying the Secret is not set, and stop.
+2. Idle screen: the product name and a single primary button "Start call".
+3. On click, run a microphone pre-flight BEFORE creating the session:
+     await navigator.mediaDevices.getUserMedia({ audio: true })
+   Catch it and display the error `name` verbatim (NotAllowedError,
+   NotFoundError, NotReadableError, other). Do not proceed if it throws.
+   Immediately stop the pre-flight tracks so the device is not held.
+4. Then POST to createPublicSession per replit.md. On non-2xx, show the HTTP
+   status code and the response body text on screen, plus a "Try again" button.
+   Never fail silently and never retry automatically.
+5. On success render:
+     <UpliftAIRoom token={token} serverUrl={wsUrl} connect audio video={false}>
+       <CallPanel />
+     </UpliftAIRoom>
+
+CallPanel.jsx:
+- const { isConnected, agentParticipant } = useUpliftAIRoom();
+- const { state } = useVoiceAssistant();
+- const tracks = useTracks([Track.Source.Microphone], { onlySubscribed: true });
+- const agentTrack = tracks.find(t => !t.participant.isLocal);
+- Render <RoomAudioRenderer /> unconditionally — this is the reliable audio
+  output path. Additionally render <AudioTrack trackRef={agentTrack} /> when
+  agentTrack exists.
+- Render <BarVisualizer state={state} trackRef={agentTrack} barCount={20} />
+  when agentTrack exists; otherwise reserve the same height with an empty box so
+  the layout does not jump.
+- Show, as plain text: connection state, agent state (listening/thinking/speaking),
+  and whether an agent participant has joined.
+- <DisconnectButton>End call</DisconnectButton>.
+- On unmount and on disconnect, stop every local media track so the browser's
+  recording indicator turns off.
+
+Diagnostics for this step only — I will ask you to remove them later:
+- console.log the createPublicSession response status and the keys of the JSON body
+  (keys only, never the token value).
+- console.log the tracks array length and agentParticipant identity whenever
+  either changes.
+
+Styling: minimal and unstyled beyond legibility. Correctness first. Do not touch
+src/index.css beyond what already exists.
+
+VERIFY before you report done:
+- No React key warnings, no "cannot update state on unmounted component",
+  no duplicate-connection warnings in the console.
+- The component does not re-render in a loop (the tracks log must not repeat
+  endlessly).
+Tell me exactly which console lines I should expect to see on a successful connect.

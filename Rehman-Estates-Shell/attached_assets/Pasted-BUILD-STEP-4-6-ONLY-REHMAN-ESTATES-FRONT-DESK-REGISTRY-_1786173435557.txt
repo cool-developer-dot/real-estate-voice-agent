@@ -1,0 +1,553 @@
+BUILD STEP 4–6 ONLY — REHMAN ESTATES FRONT DESK
+REGISTRY CARD + SPEECH-TO-DATA VISUALIZATION
+
+You are working on the Rehman Estates Front Desk hackathon project.
+
+IMPORTANT:
+Steps 1–3 are already completed and working.
+
+Your task now is ONLY to implement:
+
+STEP 4 — Registry Card
+STEP 5 — Field stamp animation
+STEP 6 — Show the customer's original spoken phrase
+
+DO NOT work on Uplift AI, voice connection, microphone, telephony, Retell, Twilio, WhatsApp, backend, database, authentication, API integration, listing search, scheduling, or any other future functionality.
+
+Do not rebuild the application from scratch.
+
+First inspect the existing codebase and reuse the existing mock lead state/data and design system.
+
+==================================================
+1. PRIMARY COMPONENT
+==================================================
+
+Create:
+
+src/components/RegistryCard.jsx
+
+If a RegistryCard already exists, improve/reuse it instead of creating a duplicate.
+
+The component must receive the lead data through props or the existing project state rather than hardcoding the UI values internally.
+
+Expected data shape:
+
+{
+  intent: "buy",
+  propertyType: "plot",
+  sizeMarla: 5.25,
+  sizeLabel: "sawa paanch marla",
+  society: "DHA Lahore",
+  phase: "Phase 6",
+  budgetMaxPKR: 20000000,
+  budgetLabel: "do crore",
+  features: ["corner"],
+  timeline: null,
+  name: null,
+  phone: null
+}
+
+==================================================
+2. REGISTRY CARD CONTENT
+==================================================
+
+Build a professional document/registry-style lead record.
+
+Header:
+
+LEAD RECORD
+
+Then these rows in exactly this logical order:
+
+INTENT
+TYPE
+SIZE
+SOCIETY
+PHASE
+BUDGET
+FEATURES
+TIMELINE
+NAME
+PHONE
+
+Example:
+
+LEAD RECORD
+
+INTENT        buy              ✓
+TYPE          plot             ✓
+SIZE          5.25 marla       ✓
+SOCIETY       DHA Lahore       ✓
+PHASE         Phase 6          ✓
+BUDGET        20,000,000       ✓
+FEATURES      corner           ✓
+TIMELINE      — 
+NAME          —
+PHONE         —
+
+Use the existing project typography, spacing and visual language where appropriate.
+
+Do NOT redesign the entire application.
+
+==================================================
+3. FIXED ROW HEIGHT
+==================================================
+
+Every registry row must have a fixed consistent height.
+
+Target:
+
+36px per row.
+
+The card must NOT move or jump vertically when fields change.
+
+Reserve the space for every field from the beginning.
+
+Empty values must display:
+
+—
+
+Filled values must display their value and a small confirmation check:
+
+20,000,000 ✓
+
+Do not conditionally remove rows.
+
+==================================================
+4. FIELD STATES
+==================================================
+
+Each field needs two clear visual states:
+
+EMPTY:
+
+BUDGET        —
+
+FILLED:
+
+BUDGET        20,000,000 ✓
+
+Use the existing design tokens if they already exist.
+
+Do not introduce random colors.
+
+The confirmation check should be subtle and professional.
+
+Avoid excessive badges, pills, gradients, shadows, or decorative UI.
+
+The product should feel like a serious property/land registry interface, not a generic AI dashboard.
+
+==================================================
+5. SIGNATURE INTERACTION — "STAMP"
+==================================================
+
+This is the most important visual interaction.
+
+When a field transitions:
+
+EMPTY → FILLED
+
+the newly populated value must visually "stamp" into the registry document.
+
+Example:
+
+Before:
+
+BUDGET        —
+
+After:
+
+BUDGET        20,000,000 ✓
+
+The filled value should briefly:
+
+- start slightly scaled up
+- fade in
+- settle into its normal position
+- feel like a document field being stamped/registered
+
+Use a short, polished animation.
+
+Target behavior:
+
+0ms:
+opacity: 0
+transform: scale(1.05)
+
+~150ms:
+opacity: 1
+transform: scale(0.99)
+
+~220ms:
+opacity: 1
+transform: scale(1)
+
+Use a professional easing curve such as:
+
+cubic-bezier(.2,.8,.2,1)
+
+The animation must be subtle.
+
+NO flashy bounce.
+NO excessive glow.
+NO large movement.
+NO screen-wide animation.
+
+The effect should communicate:
+
+"SPEECH → STRUCTURED DATA"
+
+==================================================
+6. IMPORTANT — ANIMATION MUST TRIGGER ON TRANSITION
+==================================================
+
+Do NOT animate the field continuously.
+
+The animation should happen only when a field changes from:
+
+null / empty / undefined
+
+to:
+
+a real value.
+
+If the component re-renders while the value remains unchanged, do NOT replay the animation.
+
+Implement this robustly using React state/ref logic or an appropriate reusable mechanism.
+
+For example, conceptually:
+
+empty → filled = animate
+
+filled → filled = no animation
+
+empty → empty = no animation
+
+Do not rely only on initial page-load animation.
+
+==================================================
+7. SHOW WHAT THE CUSTOMER ACTUALLY SAID
+==================================================
+
+This is a critical part of the demo.
+
+For fields where we have both normalized data and the original phrase, display both.
+
+Example:
+
+BUDGET
+20,000,000 ✓
+"do crore"
+
+SIZE
+5.25 marla ✓
+"sawa paanch marla"
+
+The normalized value is the primary value.
+
+The original phrase should appear beneath it as secondary context.
+
+Example structure:
+
+BUDGET        20,000,000 ✓
+              "do crore"
+
+SIZE          5.25 marla ✓
+              "sawa paanch marla"
+
+This visually communicates that the AI did not simply display text — it understood natural Urdu/code-switched speech and converted it into structured business data.
+
+==================================================
+8. RAW PHRASE RULES
+==================================================
+
+Only show the original phrase when it exists.
+
+For example:
+
+sizeLabel = "sawa paanch marla"
+
+budgetLabel = "do crore"
+
+If a raw phrase is null, do not display an empty quote or placeholder.
+
+Do NOT invent phrases.
+
+Do NOT translate or rewrite the customer's phrase.
+
+Display the supplied raw phrase exactly.
+
+==================================================
+9. FEATURES
+==================================================
+
+For:
+
+features: ["corner"]
+
+display:
+
+FEATURES      corner ✓
+
+If multiple features exist, display them cleanly without making the row excessively tall.
+
+Keep the implementation flexible for future values such as:
+
+corner
+park_facing
+possession
+
+Do not build additional functionality around them yet.
+
+==================================================
+10. EMPTY FIELDS
+==================================================
+
+For:
+
+timeline
+name
+phone
+
+when values are null, display:
+
+TIMELINE      —
+NAME          —
+PHONE         —
+
+Keep these rows visible.
+
+This is important because later, voice data will progressively fill these fields.
+
+==================================================
+11. DEMO STATE
+==================================================
+
+The current mock data should make the card immediately demonstrate the completed state:
+
+INTENT        buy ✓
+TYPE          plot ✓
+SIZE          5.25 marla ✓
+              "sawa paanch marla"
+
+SOCIETY       DHA Lahore ✓
+PHASE         Phase 6 ✓
+
+BUDGET        20,000,000 ✓
+              "do crore"
+
+FEATURES      corner ✓
+
+TIMELINE      —
+NAME          —
+PHONE         —
+
+Do not remove the existing mock-data architecture.
+
+==================================================
+12. IMPORTANT DEMO REQUIREMENT
+==================================================
+
+The card must ALSO support progressive population.
+
+The component should not assume that all fields are populated.
+
+It must work correctly if the state changes like:
+
+Initial:
+
+SIZE          —
+BUDGET        —
+SOCIETY       —
+
+Then:
+
+SIZE          5.25 marla ✓
+              "sawa paanch marla"
+
+Then:
+
+BUDGET        20,000,000 ✓
+              "do crore"
+
+Then:
+
+SOCIETY       DHA Lahore ✓
+
+Each newly populated field should stamp independently.
+
+This is preparing the UI for the future Uplift voice integration without implementing voice integration now.
+
+==================================================
+13. VISUAL QUALITY
+==================================================
+
+The Registry Card is the signature UI element of this hackathon project.
+
+It should feel:
+
+- premium
+- precise
+- professional
+- document-inspired
+- data-focused
+- believable for a real estate/property business
+
+Think:
+
+LAND REGISTRY / PROPERTY RECORD / PROFESSIONAL LEAD FORM
+
+NOT:
+
+generic SaaS dashboard
+generic AI chatbot
+generic CRM card
+
+Keep visual hierarchy extremely clear.
+
+The important visual story is:
+
+spoken language
+        ↓
+understanding
+        ↓
+structured information
+        ↓
+professional lead record
+
+==================================================
+14. RESPONSIVE BEHAVIOR
+==================================================
+
+Do not break the existing responsive layout.
+
+It must work at:
+
+1280px desktop
+390px mobile
+
+At smaller widths:
+
+- preserve row readability
+- avoid horizontal overflow
+- allow secondary raw phrases to wrap naturally
+- never cause the entire page to jump when a field fills
+- maintain fixed field-row structure
+
+Do not redesign the overall page layout.
+
+==================================================
+15. ACCESSIBILITY
+==================================================
+
+Use semantic HTML where appropriate.
+
+Do not rely only on color to indicate filled state.
+
+Respect:
+
+prefers-reduced-motion: reduce
+
+When reduced motion is enabled:
+
+- disable the stamp animation
+- keep the field transition visually clear through the normal state change
+
+==================================================
+16. CODE QUALITY
+==================================================
+
+Keep the implementation clean and reusable.
+
+Prefer:
+
+RegistryCard
+  └── RegistryField
+
+or another small reusable field abstraction if appropriate.
+
+Avoid duplicating the same rendering logic ten times.
+
+Do not add unnecessary dependencies.
+
+Do not introduce a component library.
+
+Do not add animation libraries unless the project already uses one and it is clearly appropriate.
+
+Use CSS animations if possible.
+
+==================================================
+17. DO NOT TOUCH
+==================================================
+
+Do NOT modify or implement:
+
+- Uplift AI
+- Uplift assistant
+- microphone
+- WebRTC
+- LiveKit
+- voice streaming
+- STT
+- TTS
+- Retell
+- Twilio
+- WhatsApp
+- backend
+- database
+- authentication
+- API calls
+- listing search
+- schedule visit
+- dealer handoff
+- analytics
+- login
+- multi-user functionality
+
+Those belong to later stages.
+
+==================================================
+18. VALIDATION
+==================================================
+
+After implementation:
+
+1. Run the application.
+2. Confirm there are no compilation errors.
+3. Confirm there are no console errors.
+4. Confirm RegistryCard renders.
+5. Confirm all 10 rows exist.
+6. Confirm filled values show ✓.
+7. Confirm empty values show —.
+8. Confirm SIZE shows:
+   5.25 marla
+   "sawa paanch marla"
+9. Confirm BUDGET shows:
+   20,000,000
+   "do crore"
+10. Confirm the stamp animation occurs when a field transitions from empty → filled.
+11. Confirm the animation does not replay on unrelated re-renders.
+12. Confirm the card does not shift vertically when fields populate.
+13. Confirm mobile layout at approximately 390px.
+14. Confirm prefers-reduced-motion behavior.
+
+==================================================
+FINAL RESPONSE
+==================================================
+
+When finished, report:
+
+STEP 4 — Registry Card: PASS/FAIL
+STEP 5 — Stamp Animation: PASS/FAIL
+STEP 6 — Original Speech Phrases: PASS/FAIL
+
+Files created/modified:
+- ...
+
+Validation:
+- ...
+
+Remaining issues:
+- ...
+
+Do not proceed to any feature beyond Steps 4–6.

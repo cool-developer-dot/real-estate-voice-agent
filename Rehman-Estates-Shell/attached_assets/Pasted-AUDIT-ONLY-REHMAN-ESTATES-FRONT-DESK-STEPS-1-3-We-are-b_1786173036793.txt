@@ -1,0 +1,110 @@
+AUDIT ONLY — REHMAN ESTATES FRONT DESK — STEPS 1–3
+
+We are building the Rehman Estates Front Desk for the Uplift AI × Replit hackathon.
+
+For now, ONLY audit and complete Steps 1–3 of our agreed workflow:
+
+STEP 1 — Project setup
+STEP 2 — React/Vite Replit project
+STEP 3 — UI working with fake/mock lead data
+
+DO NOT work on Uplift, voice, microphone, telephony, Retell, Twilio, WhatsApp, backend, database, authentication, APIs, or Person A's work yet.
+
+FIRST: Inspect the entire existing project and determine what is already implemented. Do not recreate or unnecessarily modify existing work.
+
+STEP 1 — VERIFY PROJECT SETUP
+Confirm:
+- This is a working React + Vite application.
+- The application starts successfully.
+- No unnecessary framework migration is required.
+- Existing project structure is understood.
+
+STEP 2 — VERIFY APPLICATION RUNNING
+Confirm:
+- The frontend builds/runs successfully.
+- There are no blocking compilation/runtime errors.
+- Existing UI loads correctly.
+- Existing components and styling are preserved unless a small change is required for Step 3.
+
+STEP 3 — VERIFY MOCK LEAD DATA + UI
+
+The fake/demo lead must represent this exact buyer requirement:
+
+User says:
+
+"I want a 5.25 marla plot in DHA Lahore, Phase 6, with a budget of 2 crore. Corner preferred."
+
+Expected normalized state:
+
+{
+  intent: "buy",
+  propertyType: "plot",
+  sizeMarla: 5.25,
+  sizeLabel: "sawa paanch marla",
+  society: "DHA Lahore",
+  phase: "Phase 6",
+  budgetMaxPKR: 20000000,
+  budgetLabel: "do crore",
+  features: ["corner"]
+}
+
+Verify that the existing mock data/state supports ALL of these fields:
+
+1. Intent → buy
+2. Property type → plot
+3. Size → 5.25 marla
+4. Original size phrase → "sawa paanch marla"
+5. Society → DHA Lahore
+6. Phase → Phase 6
+7. Maximum budget → PKR 20,000,000
+8. Original budget phrase → "do crore"
+9. Feature → corner
+
+Then verify that the UI visibly displays these values in the lead/registry-style interface.
+
+The desired visual information is:
+
+LEAD RECORD
+
+INTENT        buy       ✓
+TYPE          plot      ✓
+SIZE          5.25 marla ✓
+SOCIETY       DHA Lahore ✓
+PHASE         Phase 6   ✓
+BUDGET        PKR 20,000,000 ✓
+FEATURE       Corner    ✓
+
+IMPORTANT:
+- Reuse the existing mock data if it already exists.
+- Reuse existing components where possible.
+- Do not redesign the whole application.
+- Do not add new features outside Steps 1–3.
+- Do not connect any external service.
+- Do not add a backend/database.
+- Do not add Uplift integration.
+- Do not add voice functionality.
+- Do not add authentication.
+- Do not add telephony.
+
+If something is already correct, leave it unchanged.
+
+If something is missing, make the smallest necessary change to complete Steps 1–3.
+
+FINAL VERIFICATION:
+Run the application and verify:
+1. React/Vite app starts successfully.
+2. No blocking console/build errors.
+3. Mock lead data contains all required fields.
+4. All required fields are visible in the UI.
+5. The displayed values match the expected normalized state exactly.
+6. Existing functionality has not been broken.
+
+At the end, report ONLY:
+
+- Step 1: PASS/FAIL + reason
+- Step 2: PASS/FAIL + reason
+- Step 3: PASS/FAIL + reason
+- Files changed
+- Any remaining issue
+
+Do not proceed beyond Step 3.

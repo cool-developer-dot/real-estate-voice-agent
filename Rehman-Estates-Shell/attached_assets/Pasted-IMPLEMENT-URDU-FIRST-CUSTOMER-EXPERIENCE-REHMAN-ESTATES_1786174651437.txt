@@ -1,0 +1,411 @@
+IMPLEMENT URDU-FIRST CUSTOMER EXPERIENCE — REHMAN ESTATES FRONT DESK
+
+We have completed Steps 1–9:
+- React/Vite project
+- Mock lead state
+- RegistryCard
+- Stamp animation
+- Original customer phrases
+- CallPanel
+- MatchList
+- Real 40-listing dataset
+- Urdu lexicon
+
+Now update the customer-facing/demo experience to feel genuinely designed for Pakistan.
+
+IMPORTANT:
+Do NOT rebuild the application.
+Do NOT change the underlying data model.
+Do NOT change canonical/internal values such as:
+"buy", "rent", "plot", "house", "sale", etc.
+Keep those values in English internally.
+
+Only change PRESENTATION, CUSTOMER-FACING TEXT, DEMO CONTENT, and VOICE/TRANSCRIPT COPY where appropriate.
+
+==================================================
+1. LANGUAGE STRATEGY
+==================================================
+
+Use a professional bilingual approach:
+
+CUSTOMER/VOICE EXPERIENCE:
+→ Urdu-first
+
+BUSINESS/UI LABELS:
+→ English + selective Urdu where it improves the experience
+
+INTERNAL DATA:
+→ Keep English canonical values
+
+The product should feel like a Pakistani real-estate voice agent, not an English product that was simply translated.
+
+==================================================
+2. CALL PANEL — URDU FIRST
+==================================================
+
+Update the demo transcript so Sana speaks natural Pakistani Urdu.
+
+Replace generic English demo speech with:
+
+SANA:
+
+"السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں ثنا ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟"
+
+CALLER:
+
+"مجھے ڈی ایچ اے فیز سکس میں سوا پانچ مرلہ کا پلاٹ چاہیے۔ بجٹ دو کروڑ تک ہے۔"
+
+Use natural Pakistani Urdu.
+
+Do NOT use overly formal or unnatural textbook Urdu.
+
+The voice should feel like a Pakistani property dealer/receptionist conversation.
+
+==================================================
+3. LIVE STATUS
+==================================================
+
+Keep the primary technical state labels understandable:
+
+LIVE
+Listening
+Thinking
+Speaking
+
+But add Urdu context where appropriate.
+
+For example:
+
+LIVE
+سن رہی ہوں...
+
+or:
+
+LIVE
+بات سن رہی ہوں...
+
+Do not completely hide the English state because judges need to understand what the system is doing.
+
+Use:
+
+Listening
+"سن رہی ہوں..."
+
+Thinking
+"سوچ رہی ہوں..."
+
+Speaking
+"جواب دے رہی ہوں..."
+
+Keep the English state as the primary UI label and Urdu as supporting text.
+
+==================================================
+4. REGISTRY CARD
+==================================================
+
+Keep the main field labels in English because this is a professional business dashboard:
+
+LEAD RECORD
+
+INTENT
+TYPE
+SIZE
+SOCIETY
+PHASE
+BUDGET
+FEATURES
+TIMELINE
+NAME
+PHONE
+
+But values shown to the user should feel Pakistan-native.
+
+Examples:
+
+INTENT
+خرید ✓
+
+TYPE
+پلاٹ ✓
+
+SIZE
+5.25 marla ✓
+"sawa paanch marla"
+
+SOCIETY
+DHA Lahore ✓
+
+PHASE
+Phase 6 ✓
+
+BUDGET
+2 کروڑ 25 لاکھ ✓
+"دو کروڑ پچیس لاکھ"
+
+FEATURES
+Corner ✓
+
+Do NOT change the internal state:
+
+intent: "buy"
+
+propertyType: "plot"
+
+These remain unchanged internally.
+
+==================================================
+5. IMPORTANT — PAKISTANI NUMBER/PROPERTY LANGUAGE
+==================================================
+
+Use the supplied lexicon as the source of truth.
+
+Respect terminology such as:
+
+مرلہ
+کنال
+لاکھ
+کروڑ
+سوا
+ڈیڑھ
+پونے
+
+Examples:
+
+"sawa paanch marla"
+→
+"سوا پانچ مرلہ"
+
+"do crore"
+→
+"دو کروڑ"
+
+"dedh crore"
+→
+"ڈیڑھ کروڑ"
+
+"paune 2 crore"
+→
+"پونے دو کروڑ"
+
+Do NOT invent normalization rules that aren't present in the supplied lexicon.
+
+==================================================
+6. BUDGET DISPLAY
+==================================================
+
+For customer-facing display, prefer Pakistani-readable price formatting.
+
+Instead of only:
+
+PKR 20,500,000
+
+show:
+
+2 کروڑ 5 لاکھ
+
+Optionally keep:
+
+PKR 20,500,000
+
+as a smaller secondary technical value.
+
+The main displayed price should be understandable to a Pakistani property buyer.
+
+==================================================
+7. MATCH LIST
+==================================================
+
+Keep:
+
+MATCHES — 1
+
+as the primary heading because judges need to understand it.
+
+But make listing information Pakistan-friendly.
+
+Example:
+
+BLOCK L
+
+5 مرلہ · Corner
+
+2 کروڑ 5 لاکھ
+
+نوٹ:
+کارنر پلاٹ، 40 فٹ روڈ، تعمیر کے لیے تیار
+
+Keep the original listing data intact.
+
+Do NOT invent property details.
+
+If the dataset already contains Urdu labels, reuse them.
+
+==================================================
+8. PROPERTY FEATURES
+==================================================
+
+Where appropriate, present customer-facing property features in natural Pakistani terminology.
+
+Examples:
+
+corner
+→ کارنر
+
+park_facing
+→ پارک فیسنگ
+
+possession
+→ قبضہ دستیاب
+
+But only use translations supported by the existing lexicon/data.
+
+Do not modify the underlying feature values.
+
+==================================================
+9. CUSTOMER NAME / DEMO CONTENT
+==================================================
+
+If the demo currently uses generic English names, make the visible demo customer information feel Pakistani.
+
+Use realistic names only where the application already requires demo names.
+
+Examples:
+
+احمد خان
+علی رضا
+عثمان ملک
+
+Do not create unnecessary fake customer data.
+
+==================================================
+10. URDU TYPOGRAPHY
+==================================================
+
+All Urdu customer-facing text must use:
+
+Noto Nastaliq Urdu
+
+Use:
+
+direction: rtl;
+text-align: right;
+
+Use appropriate line-height for Nastaliq.
+
+English UI labels can remain LTR.
+
+Do not apply RTL to the entire application.
+
+Only Urdu text should use RTL.
+
+==================================================
+11. DO NOT TRANSLATE EVERYTHING
+==================================================
+
+IMPORTANT:
+
+Do NOT translate:
+
+- React/code
+- variable names
+- TypeScript types
+- internal enum values
+- API fields
+- file names
+- listing IDs
+- database-style values
+- canonical search/filter values
+
+For example, keep:
+
+intent: "buy"
+
+propertyType: "plot"
+
+listingType: "sale"
+
+status: "available"
+
+Internally.
+
+Only translate their presentation.
+
+==================================================
+12. DESIGN PRINCIPLE
+==================================================
+
+The final experience should communicate:
+
+PAKISTANI CUSTOMER
+        ↓
+NATURAL URDU SPEECH
+        ↓
+AI UNDERSTANDS PROPERTY LANGUAGE
+        ↓
+STRUCTURED LEAD
+        ↓
+REAL PROPERTY MATCHES
+
+The judge should immediately understand:
+
+"This AI understands how Pakistani property buyers actually speak."
+
+Do NOT make the UI look like a generic translated SaaS dashboard.
+
+==================================================
+13. DO NOT TOUCH
+==================================================
+
+Do NOT implement or modify:
+
+- Uplift integration
+- microphone
+- WebRTC
+- LiveKit
+- STT/TTS
+- telephony
+- Retell
+- Twilio
+- WhatsApp
+- backend
+- database
+- authentication
+- API
+- scheduling
+- dealer handoff
+- analytics
+
+Only update the presentation/demo language.
+
+==================================================
+14. VALIDATION
+==================================================
+
+After implementation:
+
+1. Run the app.
+2. Check desktop.
+3. Check 390px mobile.
+4. Verify Urdu renders correctly.
+5. Verify Nastaliq font works.
+6. Verify RTL works only for Urdu.
+7. Verify English UI labels remain readable.
+8. Verify RegistryCard still works.
+9. Verify stamp animation still works.
+10. Verify MatchList still works.
+11. Verify real listing data has not been modified.
+12. Verify internal values remain unchanged.
+13. Verify no console errors.
+14. Verify no existing functionality is broken.
+
+FINAL REPORT:
+
+- Urdu-first experience: PASS/FAIL
+- CallPanel Urdu: PASS/FAIL
+- RegistryCard bilingual presentation: PASS/FAIL
+- MatchList Pakistani presentation: PASS/FAIL
+- Internal data preserved: PASS/FAIL
+- Files changed: ...
+- Remaining issues: ...
+
+Do not implement anything beyond this language/presentation update.

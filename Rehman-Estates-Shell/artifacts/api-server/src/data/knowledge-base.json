@@ -1,0 +1,275 @@
+{
+  "_readme": "Knowledge base for answer_property_question. Chunks are written to be retrieved individually. Numbers are indicative Lahore market norms for a demo, not legal or tax advice — the agent must escalate anything tax-specific rather than quote a rate.",
+
+  "chunks": [
+    {
+      "id": "kb-01",
+      "topic": "file vs possession",
+      "keywords": [
+        "file",
+        "possession",
+        "farq",
+        "difference",
+        "allocation",
+        "pzision",
+        "فائل",
+        "پزیشن"
+      ],
+      "text": "A file is an allocation document. You own a claim to a plot, but no specific piece of land has been assigned yet, and you cannot build on it. A possession plot is real, physical land with a plot number, where construction can start immediately. Files are cheaper and are bought as investments. Possession plots cost considerably more, often close to double for the same size in the same society. Files convert to possession after balloting and development, which can take years and is not guaranteed to a fixed date."
+    },
+    {
+      "id": "kb-02",
+      "topic": "balloting",
+      "keywords": ["balloting", "ballot", "بیلٹنگ", "plot number", "draw"],
+      "text": "Balloting is the draw a society holds to assign specific plot numbers to file holders. Until balloting, a file holder knows the size and phase but not the exact location. After balloting the plot number is fixed, and the value usually rises because the buyer can now see exactly what they own. Corner, park facing and boulevard plots that come out of a ballot carry an immediate premium."
+    },
+    {
+      "id": "kb-03",
+      "topic": "transfer fee",
+      "keywords": ["transfer", "transfer fee", "ٹرانسفر", "fees", "charges"],
+      "text": "Transfer fees are charged by the society to move ownership from seller to buyer, and they vary by society and plot size. DHA, Bahria Town and LDA schemes each publish their own schedule and revise it periodically. Buyers should also budget for membership or development charges where applicable. The dealer will confirm the exact current figure for a specific plot, since these schedules change."
+    },
+    {
+      "id": "kb-04",
+      "topic": "transfer process",
+      "keywords": [
+        "transfer process",
+        "how to transfer",
+        "kaise",
+        "procedure",
+        "NDC"
+      ],
+      "text": "A typical society transfer runs: buyer and seller agree terms and the buyer pays token money; the seller obtains a No Demand Certificate confirming no outstanding dues; both parties attend the society transfer office with original allotment documents and CNICs; transfer fees and applicable taxes are paid; the society issues a new allotment or transfer letter in the buyer's name. Overseas sellers or buyers can act through a properly attested power of attorney."
+    },
+    {
+      "id": "kb-05",
+      "topic": "bayana token money",
+      "keywords": ["bayana", "token", "advance", "بیعانہ", "earnest"],
+      "text": "Bayana is the token money paid to hold a deal while paperwork completes. In Lahore it commonly runs from a few percent of the price up to a rounded figure agreed between the parties, and is normally documented in a written bayana receipt naming both parties, the plot, the agreed price, the amount paid and the completion date. If the buyer walks away the bayana is usually forfeited. If the seller walks away, the standard term is that they return double. Always get it in writing."
+    },
+    {
+      "id": "kb-06",
+      "topic": "NOC and society approval",
+      "keywords": [
+        "NOC",
+        "LDA",
+        "approved",
+        "illegal society",
+        "approval",
+        "این او سی"
+      ],
+      "text": "An NOC is the approval a housing scheme holds from the relevant development authority — LDA for most of Lahore. An approved scheme carries far lower legal risk, and banks and buyers treat it very differently from an unapproved one. Unapproved or partially approved schemes are cheaper but carry real risk of demolition, stalled development or unsellable title. Always check the current approval status on the development authority's own list rather than relying on the seller."
+    },
+    {
+      "id": "kb-07",
+      "topic": "registry and intiqal",
+      "keywords": [
+        "registry",
+        "intiqal",
+        "mutation",
+        "رجسٹری",
+        "انتقال",
+        "title"
+      ],
+      "text": "Registry is the formal registration of a sale deed with the government, and intiqal or mutation is the update of the land revenue record to show the new owner. Society allotment letters alone are not the same as registered title. For plots inside private societies, transfer is usually handled at society level, with registry completed later when the society allows it. For land outside a scheme, registry and mutation are essential."
+    },
+    {
+      "id": "kb-08",
+      "topic": "taxes on purchase",
+      "keywords": [
+        "tax",
+        "taxes",
+        "FBR",
+        "filer",
+        "non-filer",
+        "stamp duty",
+        "CVT",
+        "capital gains",
+        "ٹیکس"
+      ],
+      "text": "Property purchases in Pakistan attract advance income tax at the point of sale and purchase, stamp duty and capital value tax, and non-filers pay materially higher rates than filers on the FBR active taxpayer list. These rates are revised in the annual federal budget and by provincial finance acts, so any figure quoted from memory is likely to be out of date. The correct answer to a specific tax question is to confirm the current rate with the dealer or a tax consultant before the transaction, not to quote a number."
+    },
+    {
+      "id": "kb-09",
+      "topic": "overseas buyers",
+      "keywords": [
+        "overseas",
+        "abroad",
+        "POA",
+        "power of attorney",
+        "NICOP",
+        "remittance",
+        "بیرون ملک"
+      ],
+      "text": "Overseas Pakistanis buy regularly and most large societies have an overseas block or a dedicated overseas services desk. The practical requirements are a valid NICOP or CNIC, funds remitted through banking channels so the source is documented, and a power of attorney attested by the Pakistani embassy or consulate if the buyer cannot attend in person. The attorney holder completes the transfer locally. Remitting through formal channels also matters for later resale and for tax treatment."
+    },
+    {
+      "id": "kb-10",
+      "topic": "corner and park facing premium",
+      "keywords": [
+        "corner",
+        "park facing",
+        "boulevard",
+        "premium",
+        "کارنر",
+        "پارک فیسنگ"
+      ],
+      "text": "Location features carry standard premiums. Corner plots typically command around ten percent over a comparable regular plot because they have two open sides and better commercial potential. Park facing usually carries a smaller premium of roughly five to ten percent. Boulevard or main road plots carry the highest premium, often much more, because they can be converted or used commercially depending on society rules. These premiums apply to the plot price before any transfer costs."
+    },
+    {
+      "id": "kb-11",
+      "topic": "marla and kanal",
+      "keywords": [
+        "marla",
+        "kanal",
+        "size",
+        "square feet",
+        "مرلہ",
+        "کنال",
+        "area"
+      ],
+      "text": "One marla in Lahore's modern societies is 225 square feet, and one kanal is 20 marla or 4,500 square feet. Common residential plot sizes are 3, 5, 7 and 10 marla, then 1 kanal and 2 kanal. A 5 marla plot suits a small family home, 10 marla is the standard mid-size family plot, and 1 kanal is the large-house category. Older revenue records sometimes use a larger marla of 272 square feet, which is why some listings differ."
+    },
+    {
+      "id": "kb-12",
+      "topic": "possession and development charges",
+      "keywords": [
+        "possession charges",
+        "development charges",
+        "utility",
+        "charges",
+        "dues"
+      ],
+      "text": "Beyond the plot price, buyers commonly face development charges, possession charges, and utility connection costs for electricity, gas and water. In files these are often unpaid and become the buyer's liability at conversion. Always ask whether development charges are cleared before agreeing a price on a file, because an apparently cheap file can carry significant outstanding dues."
+    },
+    {
+      "id": "kb-13",
+      "topic": "rent terms",
+      "keywords": [
+        "rent",
+        "kiraya",
+        "security deposit",
+        "advance",
+        "increment",
+        "کرایہ",
+        "tenant"
+      ],
+      "text": "Residential rentals in Lahore typically require an advance security deposit of two to three months' rent, refundable at the end of the tenancy less damages. Rent agreements normally run for eleven months and are commonly renewed with an annual increase of around ten percent. Landlords usually ask for CNIC copies and tenant verification with the local police station, which is a legal requirement in Punjab."
+    },
+    {
+      "id": "kb-14",
+      "topic": "DHA Lahore phases",
+      "keywords": ["DHA", "phase", "ڈی ایچ اے", "phases", "prism", "rahbar"],
+      "text": "DHA Lahore runs from the older, fully developed Phases 1 to 5 near the city, through Phases 6, 7 and 8 which are largely developed and heavily built, to Phase 9 Prism and Phase 9 Town which are newer and cheaper. DHA Rahbar, sometimes called Phase 11, sits on Bedian Road and serves the more affordable end. Older phases carry higher prices and immediate liveability; newer phases carry growth potential and lower entry cost."
+    },
+    {
+      "id": "kb-15",
+      "topic": "Bahria Town Lahore",
+      "keywords": [
+        "Bahria",
+        "Bahria Town",
+        "Orchard",
+        "بحریہ",
+        "sector",
+        "overseas block"
+      ],
+      "text": "Bahria Town Lahore is organised into sectors A through F plus overseas blocks, with Bahria Orchard as a separate, more affordable scheme on Raiwind Road. Bahria is known for delivered infrastructure, uninterrupted power and gated security, which supports strong rental demand. Overseas blocks carry a premium and are marketed specifically to buyers abroad."
+    },
+    {
+      "id": "kb-16",
+      "topic": "plot vs house investment",
+      "keywords": [
+        "invest",
+        "investment",
+        "plot or house",
+        "returns",
+        "rental yield"
+      ],
+      "text": "Plots appreciate but produce no income and carry holding costs. Houses and apartments produce rent but appreciate more slowly and require maintenance. Rental yields on Lahore residential property are typically modest relative to price, so most local buyers treat property as a capital appreciation asset rather than an income asset. Apartments in serviced buildings tend to yield better than houses but appreciate less."
+    },
+    {
+      "id": "kb-17",
+      "topic": "how long does a deal take",
+      "keywords": [
+        "how long",
+        "timeline",
+        "kitna time",
+        "duration",
+        "complete"
+      ],
+      "text": "A straightforward possession plot transfer in an established society typically completes within two to four weeks from bayana, assuming the seller's dues are clear and both parties are available. Delays usually come from an outstanding No Demand Certificate, a seller abroad without a power of attorney, or society transfer office backlogs. File transfers are often faster because there is less to verify."
+    },
+    {
+      "id": "kb-18",
+      "topic": "financing and instalments",
+      "keywords": [
+        "loan",
+        "installments",
+        "aqsat",
+        "bank",
+        "financing",
+        "قسط",
+        "اقساط"
+      ],
+      "text": "Most Lahore property purchases are cash. Bank mortgages exist but uptake is low and approval is slow, and many societies do not accept mortgaged transfers easily. Instalment plans offered directly by developers are far more common: a down payment followed by quarterly instalments over three to four years, usually on files rather than possession plots. Instalment plots cannot normally be transferred until a minimum portion is paid."
+    },
+    {
+      "id": "kb-19",
+      "topic": "commercial property",
+      "keywords": ["commercial", "shop", "plaza", "office", "کمرشل", "دکان"],
+      "text": "Commercial plots and shops are priced far higher per marla than residential and are valued primarily on footfall and frontage rather than size. DHA's Broadway and phase commercial areas, Johar Town's main boulevards and Gulberg's Main Boulevard are the established Lahore commercial addresses. Commercial rental yields are meaningfully better than residential, which is why commercial carries the higher entry price."
+    },
+    {
+      "id": "kb-20",
+      "topic": "verifying a seller",
+      "keywords": [
+        "fraud",
+        "scam",
+        "verify",
+        "fake",
+        "dhoka",
+        "check",
+        "دھوکہ"
+      ],
+      "text": "Before paying anything, verify three things: that the allotment or transfer letter is genuine by checking directly with the society transfer office, that the seller's CNIC matches the name on the allotment, and that there are no outstanding dues via a No Demand Certificate. Never pay bayana in cash without a written receipt naming both parties and the plot. If a price is far below market for that block, treat it as a warning rather than an opportunity."
+    },
+    {
+      "id": "kb-21",
+      "topic": "society vs LDA scheme",
+      "keywords": ["private society", "LDA scheme", "difference", "government"],
+      "text": "LDA-developed schemes such as LDA Avenue are laid out and sold by the development authority, so approval is not in question and title is straightforward, though development can be slower. Private societies such as Bahria and Park View develop faster and deliver better amenities, but approval status and delivery depend on the developer's track record. DHA sits between the two: privately administered but institutionally backed, which is why it holds value best."
+    },
+    {
+      "id": "kb-22",
+      "topic": "best areas by budget",
+      "keywords": [
+        "budget",
+        "affordable",
+        "cheap",
+        "where",
+        "recommend",
+        "sasta"
+      ],
+      "text": "As a rough Lahore guide, under fifty lakh points to Al Kabir Town, Central Park or the outer Raiwind Road schemes. Fifty lakh to one crore covers Bahria Orchard, Park View City and DHA Rahbar. One to two crore covers DHA Phase 9, Lake City, Etihad Town and LDA Avenue. Above two crore opens the established DHA phases, Bahria's main sectors and Johar Town. Above five crore is Gulberg, Model Town, EME and the older DHA phases."
+    },
+    {
+      "id": "kb-23",
+      "topic": "construction cost",
+      "keywords": [
+        "construction",
+        "build",
+        "grey structure",
+        "tameer",
+        "cost to build",
+        "تعمیر"
+      ],
+      "text": "Construction cost in Lahore is quoted per square foot of covered area and varies widely with finish quality. Grey structure alone is roughly half the total. A standard 5 marla double-storey house has around 2,000 square feet of covered area, and 10 marla around 3,500. Material prices move considerably, so any figure should be confirmed with a contractor at the time of building rather than taken from an old quote."
+    },
+    {
+      "id": "kb-24",
+      "topic": "resale timing",
+      "keywords": ["resale", "sell", "when to sell", "bechna", "market timing"],
+      "text": "Lahore property is seasonal. Activity rises before and after Eid and in the months after the federal budget once tax changes are known, and slows in peak summer and during periods of currency instability. Files move faster than possession plots because the ticket size is smaller. Sellers who need a quick sale usually accept five to ten percent below the block's asking range."
+    }
+  ]
+}

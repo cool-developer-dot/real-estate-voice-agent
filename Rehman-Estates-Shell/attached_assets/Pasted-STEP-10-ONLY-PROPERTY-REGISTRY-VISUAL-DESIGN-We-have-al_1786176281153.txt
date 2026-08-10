@@ -1,0 +1,648 @@
+STEP 10 ONLY — PROPERTY REGISTRY VISUAL DESIGN
+
+We have already completed Steps 1–9 and they are working.
+
+DO NOT rebuild the application.
+
+Your ONLY task is to complete STEP 10:
+
+Make the existing Rehman Estates Front Desk UI visually feel like a modern PROPERTY REGISTRY / LAND RECORD SYSTEM rather than a generic AI chatbot or SaaS dashboard.
+
+==================================================
+CORE VISUAL CONCEPT
+==================================================
+
+The visual identity should communicate:
+
+LAND REGISTRY
+PROPERTY FILE
+SURVEY DOCUMENT
+OFFICIAL RECORD
+
+But this must be a MODERN DIGITAL interpretation.
+
+Think:
+
+"Modern government/property registry document redesigned as a premium AI product."
+
+NOT:
+
+- generic AI chatbot
+- generic CRM
+- generic SaaS dashboard
+- old-fashioned government website
+- excessive luxury/marketing design
+
+==================================================
+FIRST — AUDIT
+==================================================
+
+Before changing anything:
+
+1. Inspect the existing Dashboard.
+2. Inspect the existing Live Call page.
+3. Inspect RegistryCard.
+4. Inspect CallPanel.
+5. Inspect MatchList.
+6. Inspect existing CSS/design tokens.
+7. Inspect existing typography.
+8. Inspect responsive behavior.
+
+Preserve all existing functionality.
+
+Do not duplicate components.
+
+Do not rewrite working logic.
+
+This is a VISUAL DESIGN PASS ONLY.
+
+==================================================
+1. DESIGN TOKENS
+==================================================
+
+Use the following exact visual direction from the build specification.
+
+Define/reuse CSS variables:
+
+--paper: #F5F6F4;
+--card: #FFFFFF;
+--ink: #14181C;
+--ink-2: #5B6670;
+--ink-3: #9AA3A9;
+--rule: #DCE0DD;
+--survey: #0E6B4F;
+--survey-8: #0E6B4F14;
+--stamp: #B0342C;
+
+Border radius:
+
+--r-sm: 4px;
+--r-md: 8px;
+
+Spacing should primarily use multiples of:
+
+8px
+
+Do not introduce random colors.
+
+==================================================
+2. COLOR RULE
+==================================================
+
+Use:
+
+COOL PAPER
+→ page background
+
+WHITE
+→ cards/document surfaces
+
+DARK INK
+→ primary text
+
+SECONDARY INK
+→ labels/supporting information
+
+DEEP SURVEY GREEN
+→ confirmed data, active controls, successful states
+
+REGISTRY RED
+→ LIVE CALL INDICATOR ONLY
+
+IMPORTANT:
+
+Registry red MUST NOT become a general error color.
+
+Do NOT use red for:
+
+- buttons
+- badges
+- property cards
+- warnings
+- normal status
+- headings
+
+Red should be visually scarce so that:
+
+● LIVE
+
+immediately communicates an active call.
+
+==================================================
+3. TYPOGRAPHY
+==================================================
+
+Use:
+
+Archivo
+→ headings
+→ navigation
+→ UI labels
+→ section titles
+
+JetBrains Mono
+→ structured property values
+→ IDs
+→ prices
+→ extracted lead values
+→ registry data
+
+Noto Nastaliq Urdu
+→ Urdu transcript
+→ Urdu property terminology
+→ Urdu customer-facing content
+
+Preserve the existing Noto Nastaliq Urdu implementation.
+
+Do not apply RTL globally.
+
+English remains LTR.
+
+Urdu remains RTL.
+
+==================================================
+4. PAGE BACKGROUND
+==================================================
+
+Change the main application background to:
+
+#F5F6F4
+
+It should feel like cool registry paper.
+
+Do NOT use:
+
+- gradients
+- dramatic backgrounds
+- glassmorphism
+- heavy textures
+- excessive shadows
+
+The background should be quiet and document-like.
+
+==================================================
+5. CARDS
+==================================================
+
+Cards should look like clean official documents.
+
+Use:
+
+background:
+#FFFFFF
+
+border:
+1px solid #DCE0DD
+
+Use small professional radius:
+
+4px–8px
+
+Avoid:
+
+- huge rounded cards
+- floating glass cards
+- excessive shadows
+- colorful gradients
+
+Use thin rules and spacing to create the document feeling.
+
+==================================================
+6. REGISTRY CARD
+==================================================
+
+RegistryCard is the most important component.
+
+Do NOT change its existing data logic.
+
+Enhance only its visual presentation.
+
+It should resemble:
+
+PROPERTY RECORD
+
+or:
+
+LAND REGISTRY
+
+The structure should remain:
+
+LEAD RECORD
+
+────────────────────────
+
+INTENT
+خرید ✓
+
+TYPE
+پلاٹ ✓
+
+SIZE
+5.25 marla ✓
+"سوا پانچ مرلہ"
+
+SOCIETY
+DHA Lahore ✓
+
+PHASE
+Phase 6 ✓
+
+BUDGET
+2 کروڑ 25 لاکھ ✓
+"سوا دو کروڑ"
+
+FEATURES
+کارنر ✓
+
+TIMELINE
+—
+
+NAME
+—
+
+PHONE
+—
+
+Use:
+
+- Archivo for labels
+- JetBrains Mono for normalized data
+- Noto Nastaliq Urdu for Urdu values
+
+Do NOT change the existing stamp animation logic.
+
+The stamp animation must remain subtle and document-like.
+
+==================================================
+7. FIELD ROWS
+==================================================
+
+Maintain fixed row heights.
+
+Target:
+
+36px
+
+The page must NOT jump when fields populate.
+
+Use thin horizontal rules where appropriate.
+
+Filled state:
+
+value + subtle green check
+
+Empty state:
+
+—
+
+Use muted gray for empty values.
+
+Do not create large badges or pills.
+
+==================================================
+8. CALL PANEL
+==================================================
+
+Make CallPanel feel like a professional communication/record panel.
+
+Keep:
+
+● LIVE
+
+Listening
+Thinking
+Speaking
+
+The LIVE indicator should use:
+
+REGISTRY RED
+
+Only the LIVE indicator should use the red accent.
+
+Example:
+
+● LIVE
+
+Listening
+سن رہی ہوں...
+
+The transcript should feel like an official call record.
+
+Example:
+
+JAMESHEED / طارق
+
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔
+
+CALLER
+
+مجھے ڈی ایچ اے فیز سکس میں سوا پانچ مرلہ کا پلاٹ چاہیے۔
+
+Use clear speaker separation.
+
+Avoid chat-bubble styling.
+
+IMPORTANT:
+
+Do NOT make it look like WhatsApp or a typical AI chatbot.
+
+Transcript should feel like a CALL RECORD / TRANSCRIPT.
+
+==================================================
+9. MATCH LIST
+==================================================
+
+Make MatchList feel like a PROPERTY INVENTORY / PROPERTY REGISTER.
+
+Header:
+
+MATCHES — 1
+
+Then each property should feel like a property record.
+
+Example:
+
+BLOCK L
+
+DHA Lahore · Phase 6
+
+5 مرلہ · کارنر
+
+دو کروڑ پانچ لاکھ
+
+PKR 20,500,000
+
+Corner plot, 40ft road, ready for construction
+
+Use:
+
+- thin borders
+- document-like spacing
+- mono price/value typography
+- restrained green confirmation styling
+
+Avoid ecommerce-style cards.
+
+==================================================
+10. PROPERTY RECORD DETAILS
+==================================================
+
+Where useful, introduce subtle registry-style metadata:
+
+PROPERTY ID
+RE-001
+
+BLOCK
+L
+
+TYPE
+PLOT
+
+SIZE
+5 MARLA
+
+STATUS
+AVAILABLE
+
+Do NOT invent new data.
+
+Only display fields that actually exist in the supplied listing.
+
+This should feel like a property file / survey record.
+
+==================================================
+11. DASHBOARD
+==================================================
+
+Do NOT completely redesign the dashboard.
+
+Keep the existing business dashboard structure.
+
+Apply the same visual language:
+
+- cool paper background
+- white record cards
+- dark ink
+- thin rules
+- survey green
+- restrained typography
+- Archivo
+- JetBrains Mono
+
+Dashboard should feel like the administrative control center for a property registry.
+
+Keep navigation in English.
+
+==================================================
+12. NAVIGATION
+==================================================
+
+Keep:
+
+Dashboard
+Leads
+Live Call
+Settings
+
+in English.
+
+Do NOT translate the admin navigation into Urdu.
+
+The Urdu experience belongs primarily to the customer/voice layer.
+
+==================================================
+13. LIVE STATE
+==================================================
+
+The active voice call should be visually obvious.
+
+Use:
+
+● LIVE
+
+with registry red.
+
+Do not create a huge glowing red animation.
+
+A subtle indicator is enough.
+
+The visual hierarchy should be:
+
+LIVE CALL
+     ↓
+CALL RECORD
+     ↓
+LEAD RECORD
+     ↓
+PROPERTY MATCHES
+
+==================================================
+14. SPACING
+==================================================
+
+Use consistent spacing based around 8px multiples.
+
+Avoid cramped UI.
+
+Avoid excessive whitespace that makes the interface feel empty.
+
+The result should feel like a carefully designed professional document.
+
+==================================================
+15. RESPONSIVE DESIGN
+==================================================
+
+Do NOT break existing responsive behavior.
+
+Verify:
+
+1280px desktop
+390px mobile
+
+At mobile:
+
+- cards stack naturally
+- no horizontal scrolling
+- RegistryCard remains readable
+- transcript remains readable
+- MatchList cards remain readable
+- Urdu remains RTL
+- no layout jump
+
+==================================================
+16. ACCESSIBILITY
+==================================================
+
+Preserve existing accessibility.
+
+Maintain:
+
+- visible focus states
+- readable contrast
+- semantic headings
+- keyboard accessibility
+
+Respect:
+
+prefers-reduced-motion: reduce
+
+Do not introduce animations that cannot be disabled.
+
+==================================================
+17. PERFORMANCE
+==================================================
+
+Do not add new heavy dependencies.
+
+Prefer:
+
+CSS
+existing components
+existing fonts
+existing architecture
+
+Do not introduce:
+
+Three.js
+large animation libraries
+new UI frameworks
+unnecessary packages
+
+The hackathon demo must remain fast and reliable.
+
+==================================================
+18. DO NOT CHANGE FUNCTIONALITY
+==================================================
+
+DO NOT modify:
+
+- Uplift integration
+- voice logic
+- STT
+- TTS
+- microphone
+- WebRTC
+- LiveKit
+- backend
+- database
+- authentication
+- listings.json
+- lexicon.json
+- search logic
+- RegistryCard state logic
+- MatchList filtering logic
+- lead extraction logic
+
+Only change visual styling/presentation.
+
+==================================================
+19. FINAL VISUAL TEST
+==================================================
+
+After implementation, verify the interface visually.
+
+The final product should immediately feel like:
+
+MODERN PROPERTY REGISTRY
+        +
+AI VOICE FRONT DESK
+        +
+PAKISTAN REAL ESTATE
+
+It should NOT feel like:
+
+Generic AI Chatbot
+Generic CRM
+Generic SaaS Template
+
+==================================================
+20. FINAL VALIDATION
+==================================================
+
+Run the application.
+
+Verify:
+
+1. No compilation errors.
+2. No console errors.
+3. RegistryCard still works.
+4. Stamp animation still works.
+5. CallPanel still works.
+6. MatchList still works.
+7. Real 40-listing data remains unchanged.
+8. Urdu/Nastaliq remains correct.
+9. Dashboard remains functional.
+10. Desktop 1280px works.
+11. Mobile 390px works.
+12. LIVE red is used only for live state.
+13. Survey green is used for confirmed/active data.
+14. No gradients/glassmorphism were introduced.
+15. No excessive rounded cards were introduced.
+16. No unnecessary dependencies were added.
+
+FINAL REPORT:
+
+Step 10 — Property Registry Visual Identity: PASS/FAIL
+
+Files modified:
+- ...
+
+Visual changes:
+- ...
+
+Functionality preserved:
+- PASS/FAIL
+
+Desktop:
+- PASS/FAIL
+
+Mobile:
+- PASS/FAIL
+
+Console errors:
+- YES/NO
+
+Remaining issues:
+- ...
+
+DO NOT IMPLEMENT ANYTHING BEYOND STEP 10.

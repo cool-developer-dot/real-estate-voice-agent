@@ -1,0 +1,423 @@
+REDESIGN THE LEAD CARDS — MAKE THEM LOOK PRODUCTION-GRADE, NOT AI-GENERATED
+
+The current Lead Directory cards are visually polished but still look like an AI-generated template.
+
+I want you to redesign ONLY the lead-card presentation so it feels like a serious, premium, production-grade real-estate CRM used by an actual company.
+
+Use the attached screenshot as the current state/reference.
+
+IMPORTANT:
+Do NOT change:
+- lead data
+- lead schema
+- routing
+- filtering
+- sorting
+- search
+- functionality
+- existing interactions
+- business logic
+
+This is a visual/UX refinement.
+
+==================================================
+1. REMOVE THE "AI GENERATED" LOOK
+==================================================
+
+The current design has too much:
+
+- pastel gradient
+- glowing backgrounds
+- oversized colored avatar squares
+- excessive rounded corners
+- decorative color effects
+- empty visual space
+- overly soft appearance
+
+Reduce these significantly.
+
+The result should feel:
+
+Professional
+Precise
+Premium
+Trustworthy
+Enterprise
+Real-estate focused
+
+Think:
+
+premium CRM + property management system
+
+NOT:
+
+AI landing page / Dribbble concept / generated dashboard.
+
+==================================================
+2. CARD SURFACE
+==================================================
+
+Use a refined glass surface, but much more restrained.
+
+Card:
+
+- very subtle white/translucent background
+- subtle backdrop blur
+- thin neutral border
+- extremely soft shadow
+- 14–18px radius maximum
+- no huge colorful background glow
+
+The card should primarily look WHITE / NEUTRAL.
+
+Use gradients only as extremely subtle ambient accents.
+
+Do NOT put a giant green/blue/orange glow behind the entire card.
+
+==================================================
+3. COLOR CODING
+==================================================
+
+Use status as the main source of accent color.
+
+QUALIFIED:
+subtle green
+
+CONTACTED:
+subtle amber
+
+NEW:
+subtle blue
+
+CLOSED:
+subtle neutral/slate
+
+The accent should appear primarily in:
+
+- thin top border
+- status badge
+- small icon accent
+- tiny interaction highlight
+
+Do NOT tint the entire card heavily according to status.
+
+This is important.
+
+==================================================
+4. AVATAR
+==================================================
+
+The current large colored square initials look too AI-generated.
+
+Make the avatar more professional.
+
+Use:
+
+- 42–48px square
+- subtle neutral/light background
+- dark/high-contrast initial
+- very small status accent if useful
+
+Do NOT use a different bright gradient for every person.
+
+Example:
+
+[ A ]   Ahmed Khan
+        LD-1029
+
+The person's name should be the strongest element.
+
+==================================================
+5. HEADER HIERARCHY
+==================================================
+
+Create a much stronger information hierarchy.
+
+Example:
+
+Ahmed Khan                         QUALIFIED
+LD-1029
+
+The name:
+- 17–19px
+- semibold/bold
+- high contrast
+
+Lead ID:
+- smaller
+- monospace
+- muted
+
+Status:
+- compact pill
+- subtle
+- uppercase
+- small dot
+
+Do not make the status compete with the person's name.
+
+==================================================
+6. CONTACT INFORMATION
+==================================================
+
+Make contact details compact and professional.
+
+Example:
+
+☎  +92 300 1234567
+⌖  DHA Phase 6
+◷  08 Aug · 04:12
+
+Use small monochrome icons.
+
+Do NOT give every icon a large colorful circular background.
+
+Icons should be:
+
+- 16–18px
+- muted
+- status-colored only when useful
+
+Text should be highly readable.
+
+==================================================
+7. PROPERTY CONTEXT
+==================================================
+
+The most important information after contact should be the property requirement.
+
+Create a clear bottom information section.
+
+Example:
+
+BUY                         2 کروڑ تک
+
+or:
+
+خرید                        2 کروڑ تک
+
+DHA Phase 6
+
+Use the Pakistani price as the strongest secondary value.
+
+The price should be visually prominent but not oversized.
+
+==================================================
+8. URDU TYPOGRAPHY
+==================================================
+
+Use Noto Nastaliq Urdu ONLY for Urdu content.
+
+Example:
+
+خرید
+2 کروڑ تک
+
+Make sure Urdu is rendered correctly.
+
+Do not use Nastaliq for English labels.
+
+Do not mix RTL and LTR incorrectly.
+
+==================================================
+9. CARD STRUCTURE
+==================================================
+
+Use this hierarchy:
+
+┌───────────────────────────────────────────┐
+│ [A]  Ahmed Khan             QUALIFIED     │
+│      LD-1029                              │
+│                                           │
+│      ☎ +92 300 1234567                   │
+│      ⌖ DHA Phase 6                        │
+│      ◷ 08 Aug · 04:12                     │
+│                                           │
+│ ───────────────────────────────────────── │
+│                                           │
+│      خرید                     2 کروڑ تک   │
+└───────────────────────────────────────────┘
+
+Clean.
+Dense.
+Professional.
+
+Avoid excessive empty space.
+
+==================================================
+10. GRID
+==================================================
+
+Improve the grid layout.
+
+Desktop:
+
+3 cards per row where appropriate.
+
+Cards should have:
+
+- equal height
+- consistent internal spacing
+- aligned content
+- consistent footer position
+
+Do not allow cards to become unnecessarily tall.
+
+At smaller widths:
+
+3 → 2 → 1 columns.
+
+Mobile cards should remain compact and readable.
+
+==================================================
+11. HOVER STATE
+==================================================
+
+Use a subtle professional hover.
+
+On hover:
+
+- card rises 2–3px
+- border becomes slightly stronger
+- extremely subtle shadow increase
+- status accent becomes slightly brighter
+
+No:
+
+- glowing aura
+- large scale
+- rainbow gradient
+- dramatic animation
+
+Transition around 180–220ms.
+
+==================================================
+12. TYPOGRAPHY SYSTEM
+==================================================
+
+Use:
+
+Primary:
+modern clean sans-serif
+
+Names:
+strong semibold
+
+IDs:
+JetBrains Mono
+
+Phone numbers:
+JetBrains Mono
+
+Prices:
+JetBrains Mono or clean numeric font
+
+Urdu:
+Noto Nastaliq Urdu
+
+This should make the data feel operational and trustworthy.
+
+==================================================
+13. REMOVE DECORATIVE NOISE
+==================================================
+
+Remove/reduce:
+
+- giant avatar glow
+- colored card background wash
+- unnecessary gradients
+- excessive rounded icon containers
+- decorative light effects
+- excessive shadows
+- oversized status pills
+
+Every visual element should communicate information.
+
+==================================================
+14. PREMIUM DETAIL
+==================================================
+
+Add subtle details that make this feel like a real product:
+
+- 1px separators
+- consistent baseline alignment
+- carefully tuned padding
+- small metadata typography
+- subtle status dot
+- consistent icon sizing
+- excellent spacing rhythm
+
+The goal is NOT to make it more decorative.
+
+The goal is to make it more intentional.
+
+==================================================
+15. BRAND FEEL
+==================================================
+
+The cards should communicate:
+
+REHMAN ESTATES
+Premium Property Intelligence
+
+Not:
+
+Generic AI CRM.
+
+Use the existing Rehman visual language.
+
+Keep the overall glassmorphic environment, but make the cards themselves more restrained and functional.
+
+==================================================
+16. IMPORTANT VISUAL PRINCIPLE
+==================================================
+
+Follow this hierarchy:
+
+INFORMATION
+    ↓
+TYPOGRAPHY
+    ↓
+SPACING
+    ↓
+STATUS COLOR
+    ↓
+GLASS EFFECT
+    ↓
+ANIMATION
+
+Never reverse this.
+
+The content must be the hero.
+
+==================================================
+17. FINAL QA
+==================================================
+
+After implementing:
+
+1. Check all lead cards.
+2. Check qualified/contacted/new/closed states.
+3. Check Urdu rendering.
+4. Check Pakistani phone numbers.
+5. Check Pakistani locations.
+6. Check Pakistani prices.
+7. Check 3-column desktop.
+8. Check tablet.
+9. Check mobile.
+10. Check hover.
+11. Check text contrast.
+12. Check for unnecessary gradients.
+13. Check console for errors.
+
+Do NOT change any underlying functionality.
+
+FINAL RESULT:
+
+The cards should look like they were designed by a senior product designer for a real Pakistani property company — sophisticated, restrained, data-dense, trustworthy, and production-ready.
+
+Less decoration.
+More hierarchy.
+More information.
+More precision.
+More professionalism.

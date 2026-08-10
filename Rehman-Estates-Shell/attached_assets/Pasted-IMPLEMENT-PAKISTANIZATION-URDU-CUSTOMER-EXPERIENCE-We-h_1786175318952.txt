@@ -1,0 +1,660 @@
+IMPLEMENT PAKISTANIZATION + URDU CUSTOMER EXPERIENCE
+
+We have already completed the core Rehman Estates Front Desk demo:
+- RegistryCard
+- Stamp animation
+- CallPanel
+- MatchList
+- Real 40-listing dataset
+- Urdu-first voice/transcript presentation
+
+Now perform a focused localization pass.
+
+IMPORTANT:
+Do NOT redesign the application.
+Do NOT translate the entire dashboard into Urdu.
+Do NOT change the architecture.
+Do NOT change internal data models or canonical values.
+Do NOT modify the real 40-listing dataset unless specifically required for presentation.
+Do NOT implement Uplift integration yet.
+
+The goal is:
+
+PROFESSIONAL ENGLISH BUSINESS UI
++
+PAKISTANI REAL-ESTATE DEMO DATA
++
+URDU CUSTOMER/VOICE EXPERIENCE
+
+==================================================
+1. FIRST AUDIT THE EXISTING PROJECT
+==================================================
+
+Before editing:
+
+1. Inspect all dashboard pages.
+2. Inspect Leads page.
+3. Inspect Settings page.
+4. Inspect Live Call page.
+5. Inspect all mock/demo data files.
+6. Identify all American/US-specific demo information.
+7. Identify all customer-facing voice/greeting text.
+8. Identify all property/location/price values shown in the UI.
+9. Do not change anything until you understand where these values originate.
+
+Reuse the existing components and data architecture.
+
+==================================================
+2. DO NOT TRANSLATE THE BUSINESS UI
+==================================================
+
+KEEP THESE IN ENGLISH:
+
+Dashboard
+Leads
+Live Call
+Settings
+Front Desk Overview
+Lead Directory
+Search
+Filter
+View
+Action Center
+Pending Callbacks
+Status
+Received
+Contact
+Interest
+Budget / Area
+Agent Persona
+Agency Profile
+Voice Agent Tuning
+After-hours Voicemail Routing
+Professional & Precise
+Warm & Welcoming
+
+These are business/admin interface elements.
+
+Do NOT convert the whole dashboard into Urdu.
+
+The dashboard should continue looking like a professional SaaS/business product.
+
+==================================================
+3. PAKISTANIZE AGENCY SETTINGS
+==================================================
+
+Find the current demo agency information.
+
+Replace US-specific demo information such as:
+
++1 (555) 000-0000
+New York, NY
+
+with Pakistan-specific demo information.
+
+Use:
+
+Agency Name:
+Rehman Estates
+
+Primary Phone Number:
++92 300 1234567
+
+Office Location:
+Lahore, Pakistan
+
+IMPORTANT:
+
+Keep the field labels in English:
+
+Agency Name
+Primary Phone Number
+Office Location
+
+Only change the demo VALUES.
+
+If the application already has a real configured phone number, do not overwrite it.
+Only replace obvious placeholder/demo values.
+
+==================================================
+4. URDU VOICE GREETING
+==================================================
+
+Find the current English greeting prompt:
+
+"Thank you for calling Rehman Estates. How may I direct your inquiry today?"
+
+Replace the customer-facing demo greeting with natural Pakistani Urdu:
+
+"السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں ثنا ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟"
+
+This is customer-facing voice content, so Urdu is required.
+
+Do NOT translate the Settings UI label "Greeting Prompt".
+
+The label remains:
+
+Greeting Prompt
+
+The VALUE should be Urdu.
+
+==================================================
+5. AGENT NAME
+==================================================
+
+The voice agent should consistently be:
+
+ثنا
+
+Where the customer-facing voice identity/name is displayed, use:
+
+Sana / ثنا
+
+Prefer:
+
+ثنا
+
+in Urdu customer-facing areas.
+
+Do not rename internal variables unless necessary.
+
+==================================================
+6. PAKISTANIZE MOCK CUSTOMER DATA
+==================================================
+
+Audit all dashboard/lead mock data.
+
+The current UI contains obvious US/Western demo data such as:
+
+Eleanor Vance
+Marcus Sterling
+Sophia Chen
+Alistair Montgomery
+Isabella Rossi
+James Harrison
+
+and US phone numbers such as:
+
++1 (555)...
+
+and US locations such as:
+
+Upper East Side
+Brooklyn Heights
+Midtown
+New York
+
+These are inconsistent with Rehman Estates' Pakistan-focused hackathon product.
+
+Replace obvious placeholder/demo customers with realistic Pakistani demo names.
+
+Use examples such as:
+
+Ahmed Khan
+Ali Raza
+Usman Malik
+Hassan Ahmed
+Ayesha Khan
+Hamza Sheikh
+
+Use Pakistani phone formats such as:
+
++92 300 1234567
++92 301 2345678
+
+Do not create excessive fake information.
+
+Maintain the same number of records and existing UI structure.
+
+IMPORTANT:
+If a value comes from the REAL 40-listing dataset, do not modify the real listing data simply to localize it.
+
+Only modify obvious dashboard/CRM MOCK data.
+
+==================================================
+7. PAKISTANIZE MOCK PROPERTY LOCATIONS
+==================================================
+
+Replace obvious US property locations in mock dashboard/lead data.
+
+Examples:
+
+Upper East Side
+Brooklyn Heights
+Midtown
+New York
+
+should become realistic Pakistani property locations such as:
+
+DHA Lahore
+DHA Phase 6
+Bahria Town Lahore
+Bahria Town Phase 8
+Gulberg Lahore
+Model Town Lahore
+Johar Town Lahore
+
+Use locations consistent with the actual supplied property inventory wherever possible.
+
+Do not invent details for real listings.
+
+==================================================
+8. PAKISTANI PROPERTY INTEREST DISPLAY
+==================================================
+
+Keep the business UI structure in English.
+
+For example:
+
+INTEREST
+
+But customer/property values should use Pakistani terminology where appropriate.
+
+Instead of:
+
+Buy
+
+show:
+
+خرید
+
+Instead of:
+
+Plot
+
+show:
+
+پلاٹ
+
+Instead of:
+
+Rent
+
+show:
+
+کرایہ
+
+Instead of:
+
+House
+
+show:
+
+گھر
+
+However:
+
+DO NOT change internal values.
+
+For example, internally continue using:
+
+intent: "buy"
+propertyType: "plot"
+listingType: "sale"
+
+Only create presentation/display mappings.
+
+==================================================
+9. PAKISTANI PRICE DISPLAY
+==================================================
+
+Remove obvious US-style demo pricing from mock CRM data.
+
+Do NOT use:
+
+$2.5M
+$5M–$7M
+$1.8M–$2.2M
+
+for Pakistani demo leads.
+
+Use Pakistani property pricing.
+
+Examples:
+
+2 کروڑ
+2 کروڑ 50 لاکھ
+1 کروڑ 50 لاکھ
+3 کروڑ تک
+
+Where useful, a secondary numeric value can remain available internally.
+
+The primary customer-facing display should use Pakistani property terminology.
+
+IMPORTANT:
+Do not modify the real listing prices in listings.json.
+
+The existing real listing dataset remains the source of truth.
+
+==================================================
+10. CUSTOMER-FACING URDU
+==================================================
+
+Customer-facing voice/transcript content should remain Urdu-first.
+
+Examples:
+
+Greeting:
+
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں ثنا ہوں۔
+
+Customer:
+
+مجھے ڈی ایچ اے فیز سکس میں سوا پانچ مرلہ کا پلاٹ چاہیے۔ بجٹ سوا دو کروڑ تک ہے۔
+
+Lead display:
+
+خرید
+پلاٹ
+سوا پانچ مرلہ
+کارنر
+دو کروڑ 25 لاکھ
+
+Match display:
+
+5 مرلہ
+کارنر
+دو کروڑ پانچ لاکھ
+
+Use the existing lexicon as the source of truth for Urdu property terminology.
+
+Do not invent normalization rules.
+
+==================================================
+11. KEEP THE REAL LISTINGS DATA INTACT
+==================================================
+
+The supplied:
+
+src/data/listings.json
+
+is the real 40-listing demo inventory.
+
+DO NOT replace it.
+DO NOT fabricate another inventory.
+DO NOT change listing IDs.
+DO NOT change prices.
+DO NOT change availability/status.
+DO NOT change factual property details.
+
+Use the existing data exactly as the source of truth.
+
+Only presentation/display mapping may change.
+
+==================================================
+12. LEADS PAGE
+==================================================
+
+Keep these labels in English:
+
+Lead Directory
+Lead
+Contact
+Interest
+Budget / Area
+Status
+Received
+Search leads
+Filter
+View
+
+But make the displayed demo data Pakistan-native.
+
+Example:
+
+Ahmed Khan
++92 300 1234567
+
+خرید
+
+2 کروڑ تک
+
+DHA Phase 6
+
+QUALIFIED
+
+The status labels may remain:
+
+NEW
+CONTACTED
+QUALIFIED
+CLOSED
+
+because these are internal business workflow states.
+
+==================================================
+13. DASHBOARD
+==================================================
+
+Keep:
+
+Front Desk Overview
+Live metrics and recent activity
+Active Calls
+Leads Captured (Today)
+Follow-ups Pending
+Conversion Rate
+Recent Inquiries
+Action Center
+Pending Callbacks
+
+in English.
+
+Only change the underlying mock data.
+
+Example:
+
+Recent Inquiry:
+
+Ahmed Khan
++92 300 1234567
+خرید
+DHA Lahore
+QUALIFIED
+
+Do NOT translate dashboard navigation.
+
+==================================================
+14. SETTINGS PAGE
+==================================================
+
+KEEP:
+
+System Configuration
+Agency Profile
+Voice Agent Tuning
+Agent Persona
+Professional & Precise
+Warm & Welcoming
+Greeting Prompt
+After-hours Voicemail Routing
+
+in English.
+
+Change only the values where appropriate.
+
+Example:
+
+Agency Name:
+Rehman Estates
+
+Primary Phone Number:
++92 300 1234567
+
+Office Location:
+Lahore, Pakistan
+
+Greeting Prompt:
+
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید۔ میں ثنا ہوں۔ آپ کس قسم کی پراپرٹی تلاش کر رہے ہیں؟
+
+==================================================
+15. LANGUAGE ARCHITECTURE
+==================================================
+
+Use this rule throughout the application:
+
+BUSINESS UI
+→ English
+
+CUSTOMER VOICE
+→ Urdu
+
+LIVE TRANSCRIPT
+→ Urdu
+
+PROPERTY TERMINOLOGY
+→ Urdu-first
+
+CUSTOMER PREFERENCES
+→ Urdu-first
+
+PROPERTY PRICES
+→ Pakistani crore/lakh terminology
+
+CUSTOMER NAMES
+→ Pakistani demo names
+
+CUSTOMER LOCATIONS
+→ Pakistani locations
+
+INTERNAL CODE
+→ English
+
+INTERNAL ENUMS
+→ English
+
+INTERNAL DATABASE VALUES
+→ English
+
+This separation is mandatory.
+
+==================================================
+16. DO NOT BREAK EXISTING URDU IMPLEMENTATION
+==================================================
+
+Preserve:
+
+Noto Nastaliq Urdu
+direction: rtl
+text-align: right
+
+for Urdu content.
+
+Do not apply RTL globally.
+
+English UI must remain LTR.
+
+Do not modify the RegistryCard stamp animation.
+
+Do not break CallPanel.
+
+Do not break MatchList.
+
+Do not break the real listing search.
+
+==================================================
+17. IMPORTANT — NO NEW FEATURES
+==================================================
+
+Do NOT implement:
+
+- Uplift integration
+- microphone
+- WebRTC
+- LiveKit
+- STT
+- TTS
+- Retell
+- Twilio
+- WhatsApp
+- backend
+- database
+- authentication
+- telephony
+- outbound calling
+- scheduling
+- analytics
+- CRM backend
+- AI memory
+- RAG
+
+This task is ONLY localization + Pakistanization of the existing demo.
+
+==================================================
+18. VALIDATION
+==================================================
+
+After implementation:
+
+1. Run the application.
+2. Check Dashboard.
+3. Check Leads.
+4. Check Settings.
+5. Check Live Call.
+6. Confirm no US placeholder data remains in the visible demo.
+7. Confirm Pakistani names are used in mock CRM data.
+8. Confirm Pakistani phone numbers are used for mock data.
+9. Confirm Lahore/Pakistan locations are used.
+10. Confirm Pakistani price terminology is used.
+11. Confirm greeting is Urdu.
+12. Confirm Sana/ثنا is used consistently.
+13. Confirm transcript remains Urdu/Nastaliq.
+14. Confirm RegistryCard remains functional.
+15. Confirm MatchList remains functional.
+16. Confirm real 40-listing data remains unchanged.
+17. Confirm internal values remain unchanged.
+18. Confirm no console errors.
+19. Check desktop at 1280px.
+20. Check mobile at 390px.
+
+==================================================
+19. FINAL QUALITY CHECK
+==================================================
+
+The final product should communicate this immediately:
+
+PROFESSIONAL BUSINESS DASHBOARD
+        +
+PAKISTANI REAL-ESTATE CONTEXT
+        +
+NATURAL URDU VOICE
+        +
+STRUCTURED LEAD EXTRACTION
+        +
+REAL PROPERTY MATCHING
+
+It should NOT look like:
+
+"American real-estate CRM translated into Urdu."
+
+It should look like:
+
+"A professional AI property front desk designed specifically for Pakistan."
+
+==================================================
+FINAL REPORT
+==================================================
+
+After implementation, report:
+
+Pakistanization: PASS/FAIL
+Urdu customer experience: PASS/FAIL
+Dashboard English preserved: PASS/FAIL
+Pakistani mock data: PASS/FAIL
+Pakistani locations: PASS/FAIL
+Pakistani pricing: PASS/FAIL
+Urdu greeting: PASS/FAIL
+Real 40-listing dataset preserved: PASS/FAIL
+Internal data preserved: PASS/FAIL
+Desktop validation: PASS/FAIL
+Mobile validation: PASS/FAIL
+Console errors: YES/NO
+
+List:
+- Files modified
+- Exact mock data changed
+- Any remaining US-specific demo data
+- Any issues requiring manual review
+
+Do not implement anything outside this scope.

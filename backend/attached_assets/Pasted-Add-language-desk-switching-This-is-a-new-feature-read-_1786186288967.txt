@@ -1,0 +1,49 @@
+Add language desk switching. This is a new feature - read replit.md first.
+
+We now have THREE Uplift assistants, all public, all with the same five tools:
+  urdu    = 306b7318-ee5d-47e4-9f4e-27d945585881   (current default)
+  punjabi = 035c9b36-74f2-496f-a2d1-864631d6b7b8
+  english = ba542e3f-cb15-401b-a25a-6f7064a3f6af
+
+Put these in a DESKS map in src/App.jsx. Do NOT hardcode them anywhere else.
+Keep reading the Urdu one from import.meta.env.VITE_ASSISTANT_ID as today, and
+fall back to the literal above if the secret is missing.
+
+1. Add a sixth tool, switch_language:
+   description: "Switch the conversation to another language desk. Call this
+     when the caller speaks or asks for Punjabi or English, or asks to switch
+     back to Urdu. Announce the switch in ONE short sentence before calling."
+   parameters (required: ["language"]):
+     language (string, enum: ["urdu", "punjabi", "english"])
+   timeout: 5
+   handler: if language === current desk, return
+     { result: "already", presentationInstructions: "Continue normally. Do not
+       mention switching." }
+   otherwise call switchDesk(language) and return
+     { result: { desk: language },
+       presentationInstructions: "Say nothing further. The new desk will greet
+       the caller." }
+
+2. switchDesk(lang) reuses the EXACT machinery Reset already uses: tear down the
+   current session, create a new createPublicSession against DESKS[lang], and
+   reconnect - all inside the same gesture-safe path with prepareRoomInGesture
+   and startAudio, so the autoplay lock does not come back.
+
+   CRITICAL: do NOT clear lead, matches, visits, handoff or the registry card.
+   The whole point is that the caller keeps their captured data across the
+   switch. Only the transcript may be visually separated.
+
+3. During the switch show "switching to <language> desk..." where the
+   reconnecting state currently shows.
+
+4. In the transcript, insert a divider row when the desk changes:
+   "— switched to Punjabi desk —" in --ink-3, 10px mono, centred.
+
+5. Header: show the active desk as a small mono label next to FRONT DESK,
+   e.g. "URDU" / "PUNJABI" / "ENGLISH" in --ink-3. StatusRail adds `desk: <lang>`.
+
+6. Reset returns to the Urdu desk.
+
+VERIFY: switching must not drop the registry card contents, must not require a
+page reload, and audio must work on the new session without pressing anything.
+Report anything you could not verify.

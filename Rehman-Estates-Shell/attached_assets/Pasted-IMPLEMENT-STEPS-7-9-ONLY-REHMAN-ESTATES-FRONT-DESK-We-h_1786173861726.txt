@@ -1,0 +1,642 @@
+IMPLEMENT STEPS 7–9 ONLY — REHMAN ESTATES FRONT DESK
+
+We have already completed and validated Steps 1–6:
+
+1. React/Vite Replit project
+2. Application running
+3. Mock lead data
+4. RegistryCard
+5. Registry field stamp animation
+6. Original customer phrases
+
+DO NOT break or redesign any of that.
+
+Your task is now ONLY:
+
+STEP 7 — CallPanel
+STEP 8 — MatchList
+STEP 9 — listings.json + lexicon.json integration
+
+==================================================
+FIRST — AUDIT EXISTING CODE
+==================================================
+
+Before changing anything:
+
+1. Inspect the entire existing project structure.
+2. Inspect the existing call page.
+3. Inspect RegistryCard.tsx and its current props/state.
+4. Inspect existing mock lead data.
+5. Inspect existing CSS/design tokens.
+6. Check whether CallPanel or MatchList already exists.
+7. Check whether listings.json or lexicon.json already exists.
+8. Reuse existing architecture wherever possible.
+
+Do NOT create duplicate components or duplicate state systems.
+
+The existing RegistryCard from Steps 4–6 must continue working exactly as it does.
+
+==================================================
+STEP 7 — CALL PANEL
+==================================================
+
+Create:
+
+src/components/CallPanel.tsx
+
+If the project is already TypeScript, use .tsx.
+Do NOT create a .jsx version if the existing project is TypeScript.
+
+The CallPanel represents the live voice interaction area.
+
+It should visually communicate:
+
+● LIVE
+
+Listening...
+
+SANA
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید
+
+CALLER
+مجھے ڈی ایچ اے فیز سکس میں پانچ مرلہ
+کا پلاٹ چاہیے
+
+The component must support these agent states:
+
+- listening
+- thinking
+- speaking
+
+Use a clean state-driven architecture rather than hardcoding one state.
+
+Example conceptual state:
+
+type AgentState = "listening" | "thinking" | "speaking";
+
+The visual state should change according to the supplied state.
+
+==================================================
+CALL STATE DESIGN
+==================================================
+
+LIVE state:
+
+● LIVE
+
+Listening...
+
+Thinking state:
+
+● LIVE
+
+Thinking...
+
+Speaking state:
+
+● LIVE
+
+Speaking...
+
+Keep the state indicator subtle and professional.
+
+Do NOT create fake AI animations that imply functionality that does not exist.
+
+This is currently a UI/state component only.
+
+Do NOT connect Uplift AI yet.
+
+==================================================
+URDU TRANSCRIPT
+==================================================
+
+The transcript area must properly support Urdu.
+
+Use:
+
+Noto Nastaliq Urdu
+
+with:
+
+direction: rtl;
+text-align: right;
+
+The Urdu transcript should render naturally and professionally.
+
+Example:
+
+SANA
+
+السلام علیکم، رحمان اسٹیٹس میں خوش آمدید
+
+CALLER
+
+مجھے ڈی ایچ اے فیز سکس میں پانچ مرلہ
+کا پلاٹ چاہیے
+
+Make the transcript readable at both desktop and mobile widths.
+
+Use appropriate line-height for Nastaliq.
+
+Do not use an ordinary Latin font for Urdu transcript content.
+
+If the project already loads Noto Nastaliq Urdu, reuse it.
+
+If it does not, add the font cleanly without adding unnecessary dependencies.
+
+==================================================
+TRANSCRIPT DATA MODEL
+==================================================
+
+Do not hardcode transcript rendering directly into the component.
+
+Use a simple data structure such as:
+
+[
+  {
+    role: "agent",
+    text: "السلام علیکم، رحمان اسٹیٹس میں خوش آمدید"
+  },
+  {
+    role: "caller",
+    text: "مجھے ڈی ایچ اے فیز سکس میں پانچ مرلہ کا پلاٹ چاہیے"
+  }
+]
+
+The component should render this data.
+
+This will later allow Person A's real Uplift transcript to replace the mock transcript without redesigning the component.
+
+==================================================
+STEP 8 — MATCH LIST
+==================================================
+
+Create:
+
+src/components/MatchList.tsx
+
+Again, use .tsx if the project is TypeScript.
+
+Purpose:
+
+When the lead contains enough property criteria, filter the supplied property inventory and display matching listings.
+
+Current target demo criteria:
+
+Society:
+DHA Lahore
+
+Phase:
+Phase 6
+
+Size:
+5.25 marla
+
+Budget:
+PKR 20,000,000 maximum
+
+Feature:
+corner
+
+==================================================
+MATCH LIST UI
+==================================================
+
+Display something similar to:
+
+MATCHES — 3
+
+────────────────────────────
+
+Block L
+
+5 marla · Corner
+
+PKR 2 crore 5 lakh
+
+────────────────────────────
+
+Block N
+
+5 marla · Park Facing
+
+PKR 2 crore 20 lakh
+
+────────────────────────────
+
+The UI should feel like a professional property inventory/search result, NOT a generic e-commerce card.
+
+Keep the information concise.
+
+Each listing should clearly communicate:
+
+- location/block
+- property type
+- size
+- relevant features
+- price
+
+Use the actual supplied listing data.
+
+DO NOT invent listings.
+
+==================================================
+MATCHING LOGIC
+==================================================
+
+Create a small reusable filtering function.
+
+Conceptually:
+
+searchListings(lead, listings)
+
+It should use the current lead information to filter listings.
+
+At minimum, support:
+
+- society
+- phase
+- property type
+- size
+- maximum budget
+- features
+
+Do not make the matching algorithm unnecessarily complex.
+
+The objective is a reliable hackathon demo.
+
+A listing should not be displayed as a match if it clearly violates the user's core requirements.
+
+Budget should be treated as a maximum.
+
+For example:
+
+User budget:
+20,000,000
+
+Listing:
+20,500,000
+
+This should NOT be treated as an exact budget match unless the existing supplied data/spec explicitly defines another behavior.
+
+==================================================
+ZERO MATCH STATE
+==================================================
+
+Handle zero matches professionally.
+
+Example:
+
+NO MATCHES
+
+We couldn't find an exact match for these requirements.
+
+Consider:
+- increasing the budget
+- changing the phase
+- considering nearby options
+
+Do NOT fabricate a property.
+
+This state will be useful later for the real voice demo.
+
+==================================================
+MATCH COUNT
+==================================================
+
+Show:
+
+MATCHES — N
+
+where N is the actual number of matching listings.
+
+Do not hardcode "3".
+
+If there are 3 matches → MATCHES — 3
+
+If there are 0 → MATCHES — 0
+
+If there are 5 → MATCHES — 5
+
+==================================================
+STEP 9 — PROPERTY DATA
+==================================================
+
+Check whether these files already exist.
+
+Required:
+
+src/data/listings.json
+src/data/lexicon.json
+
+If they are available elsewhere in the project/workspace, locate and reuse them.
+
+Do NOT fabricate replacement data if the supplied files are available.
+
+If they are genuinely missing, clearly report that instead of inventing the full dataset.
+
+The supplied listings are the source of truth for the property inventory.
+
+The supplied lexicon is the source of truth for Pakistani property terminology normalization.
+
+==================================================
+LISTINGS DATA
+==================================================
+
+Import/read the supplied listings into the frontend.
+
+The MatchList must use this real supplied data.
+
+Do not manually copy individual listing values into MatchList.
+
+The architecture should be:
+
+listings.json
+      ↓
+searchListings()
+      ↓
+matching listings
+      ↓
+MatchList
+
+This is important because later the data source can change without rewriting the UI.
+
+==================================================
+LEXICON DATA
+==================================================
+
+Use:
+
+src/data/lexicon.json
+
+for the supplied Pakistani property terminology.
+
+The implementation must respect the supplied terminology and normalization rules.
+
+Examples from the specification include:
+
+"sawa 5 marla"
+→ 5.25 marla
+
+"dedh crore"
+→ PKR 15,000,000
+
+"paune 2 crore"
+→ PKR 17,500,000
+
+Do NOT invent additional normalization rules unless they already exist in the supplied lexicon.
+
+Do NOT silently replace the supplied lexicon with a custom implementation.
+
+If the lexicon already provides normalization mappings/functions, reuse them.
+
+==================================================
+IMPORTANT ARCHITECTURE
+==================================================
+
+The current flow should become:
+
+                 MOCK / LEAD STATE
+                        │
+                        ├───────────────┐
+                        │               │
+                        ▼               ▼
+                 RegistryCard       Match Engine
+                                         │
+                                   listings.json
+                                         │
+                                         ▼
+                                    MatchList
+
+
+                 CallPanel
+                     │
+                     ▼
+                 Transcript
+                     │
+                     ▼
+              Future Uplift state
+
+Do NOT connect these components directly to Uplift yet.
+
+They must be ready to receive future real voice state through props/state.
+
+==================================================
+INTEGRATE INTO EXISTING CALL PAGE
+==================================================
+
+Inspect the existing call page.
+
+Do NOT create another page if one already exists.
+
+Integrate:
+
+CallPanel
+RegistryCard
+MatchList
+
+into the existing call experience.
+
+The intended layout is approximately:
+
+┌─────────────────────────────────────────────────────────┐
+│ REHMAN ESTATES — FRONT DESK                  ● LIVE      │
+├──────────────────────────────┬──────────────────────────┤
+│                              │                          │
+│       CALL PANEL             │      LEAD RECORD         │
+│                              │                          │
+│       ● LIVE                 │      INTENT    buy ✓     │
+│       Listening...           │      TYPE      plot ✓    │
+│                              │      SIZE      5.25 ...  │
+│       SANA                   │      SOCIETY   DHA ...   │
+│       Urdu transcript        │      BUDGET    20m ✓     │
+│                              │                          │
+│       CALLER                 │      MATCHES — 3         │
+│       Urdu transcript        │      listing 1           │
+│                              │      listing 2           │
+└──────────────────────────────┴──────────────────────────┘
+
+Adapt this to the existing application rather than rebuilding the entire layout.
+
+==================================================
+PROGRESSIVE DEMO BEHAVIOR
+==================================================
+
+The existing mock lead currently represents:
+
+intent:
+buy
+
+propertyType:
+plot
+
+size:
+5.25 marla
+
+society:
+DHA Lahore
+
+phase:
+Phase 6
+
+budget:
+20,000,000
+
+feature:
+corner
+
+The UI should demonstrate:
+
+CALL PANEL
+      ↓
+lead information
+      ↓
+RegistryCard updates
+      ↓
+searchListings()
+      ↓
+MatchList updates
+
+The current data can remain mock/static.
+
+DO NOT implement actual voice extraction yet.
+
+==================================================
+DESIGN REQUIREMENTS
+==================================================
+
+Maintain the existing Rehman Estates visual language.
+
+The interface should feel:
+
+- premium
+- professional
+- real-estate focused
+- operational
+- precise
+- believable in a live CEO/judge demo
+
+Avoid:
+
+- generic AI chatbot styling
+- excessive gradients
+- excessive rounded cards
+- unnecessary animations
+- random colors
+- excessive icons
+- unnecessary UI decorations
+
+The RegistryCard remains the signature component.
+
+The CallPanel and MatchList should visually support it rather than compete with it.
+
+==================================================
+RESPONSIVENESS
+==================================================
+
+Verify:
+
+1280px desktop
+390px mobile
+
+At mobile widths:
+
+- CallPanel stacks cleanly
+- RegistryCard remains readable
+- MatchList cards stack vertically
+- Urdu transcript remains RTL
+- no horizontal overflow
+- no layout-breaking fixed widths
+
+Do not break the existing dashboard.
+
+==================================================
+ACCESSIBILITY
+==================================================
+
+Ensure:
+
+- semantic headings
+- readable contrast
+- keyboard-accessible controls if any are introduced
+- visible focus states
+- proper RTL handling for Urdu
+- prefers-reduced-motion remains respected
+
+==================================================
+NO EXTRA FEATURES
+==================================================
+
+DO NOT implement:
+
+- Uplift AI
+- microphone
+- WebRTC
+- LiveKit
+- real-time voice
+- STT
+- TTS
+- Retell
+- Twilio
+- WhatsApp
+- backend
+- database
+- authentication
+- API
+- login
+- scheduling
+- dealer handoff
+- analytics
+- CRM
+- telephony
+
+These are explicitly outside Steps 7–9.
+
+==================================================
+VALIDATION
+==================================================
+
+After implementation:
+
+1. Run the application.
+2. Confirm there are no build errors.
+3. Confirm there are no console errors.
+4. Confirm CallPanel renders.
+5. Confirm LIVE indicator renders.
+6. Confirm Listening / Thinking / Speaking states work.
+7. Confirm Urdu transcript renders in Nastaliq and RTL.
+8. Confirm MatchList renders.
+9. Confirm listings come from listings.json.
+10. Confirm matching uses actual lead criteria.
+11. Confirm budget filtering works correctly.
+12. Confirm match count is dynamic.
+13. Confirm zero-match state works.
+14. Confirm RegistryCard from Steps 4–6 still works.
+15. Confirm the original phrase fields still display.
+16. Confirm no existing dashboard functionality is broken.
+17. Test at approximately 390px width.
+18. Test at desktop width.
+
+==================================================
+FINAL REPORT
+==================================================
+
+When finished, report exactly:
+
+STEP 7 — CallPanel: PASS/FAIL
+STEP 8 — MatchList: PASS/FAIL
+STEP 9 — Data integration: PASS/FAIL
+
+Files created:
+- ...
+
+Files modified:
+- ...
+
+Validation:
+- ...
+
+Remaining issues:
+- ...
+
+Do not proceed beyond Steps 7–9.

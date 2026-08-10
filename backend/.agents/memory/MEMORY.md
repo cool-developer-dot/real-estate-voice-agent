@@ -1,0 +1,2 @@
+- [.replit edits vs task merges](replit-config-merges.md) — .replit port-mapping edits were silently reverted when a task merged; always re-verify the live .replit ports block after any merge.
+- [LiveKit autoplay unlock](livekit-autoplay-unlock.md) — startAudio must run inside the click gesture on a pre-created Room passed via the room prop; gesture-less reconnects rely on the fallback button.
