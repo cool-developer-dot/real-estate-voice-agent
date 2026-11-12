@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "node init && concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
-    "dev:api": "node init && PORT=3001 pnpm --dir Rehman-Estates-Shell --filter @workspace/api-server run dev",
-    "dev:web": "node init && pnpm --dir backend run dev",
-    "dev:dashboard": "node init && PORT=5173 BASE_PATH=/ pnpm --dir Rehman-Estates-Shell --filter @workspace/rehman-estates run dev",
-    "build:api": "node init && pnpm --dir Rehman-Estates-Shell --filter @workspace/api-server run build"
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "PORT=3001 pnpm --dir Rehman-Estates-Shell --filter @workspace/api-server run dev",
+    "dev:web": "pnpm --dir backend run dev",
+    "dev:dashboard": "PORT=5173 BASE_PATH=/ pnpm --dir Rehman-Estates-Shell --filter @workspace/rehman-estates run dev",
+    "build:api": "pnpm --dir Rehman-Estates-Shell --filter @workspace/api-server run build"
   },
   "devDependencies": {
     "concurrently": "^9.2.0"
